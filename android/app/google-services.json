@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1024045374735",
+    "project_id": "kf-survey-fc78d",
+    "storage_bucket": "kf-survey-fc78d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024045374735:android:ac3060e401a66a7779f27a",
+        "android_client_info": {
+          "package_name": "com.example.kf_survey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024045374735-tvbv9n4fkad8impok3akunurt5io310o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUgcshWnnzl4h-TPLVMb75pvMY7WBkJ6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024045374735-tvbv9n4fkad8impok3akunurt5io310o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
