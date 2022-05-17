@@ -1,5 +1,6 @@
 import 'package:flutterfire_ui/auth.dart';
 import 'package:kf_survey/ui/dashboard/dashboard_v.dart';
+import 'package:kf_survey/ui/family/family_add/family_add_v.dart';
 import 'package:kf_survey/ui/family/family_v.dart';
 import 'package:kf_survey/ui/search/search_v.dart';
 import 'package:kf_survey/ui/splash/splash_v.dart';
@@ -15,6 +16,7 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(page: FamilyView),
   MaterialRoute(page: SearchView),
   MaterialRoute(page: SurveyView),
+  MaterialRoute(page: FamilyAddView),
 ], dependencies: [
   Singleton(classType: NavigationService),
   Singleton(classType: SnackbarService),

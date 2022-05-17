@@ -6,7 +6,15 @@ import '../../app/app.locator.dart';
 
 class DashboardViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator.get<NavigationService>();
-  void profileTap() {
+  void onProfileTap() {
     _navigationService.navigateTo(Routes.profileScreen);
   }
+
+  void onAddFamilyTap() {
+    _navigationService.navigateTo(Routes.familyAddView);
+  }
+
+  void onFindFamilyTap() {}
+
+  void onFindPersonTap() {}
 }

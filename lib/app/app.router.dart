@@ -14,6 +14,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
 import '../ui/dashboard/dashboard_v.dart';
+import '../ui/family/family_add/family_add_v.dart';
 import '../ui/family/family_v.dart';
 import '../ui/search/search_v.dart';
 import '../ui/splash/splash_v.dart';
@@ -27,6 +28,7 @@ class Routes {
   static const String familyView = '/family-view';
   static const String searchView = '/search-view';
   static const String surveyView = '/survey-view';
+  static const String familyAddView = '/family-add-view';
   static const all = <String>{
     splashView,
     signInScreen,
@@ -35,6 +37,7 @@ class Routes {
     familyView,
     searchView,
     surveyView,
+    familyAddView,
   };
 }
 
@@ -49,6 +52,7 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.familyView, page: FamilyView),
     RouteDef(Routes.searchView, page: SearchView),
     RouteDef(Routes.surveyView, page: SurveyView),
+    RouteDef(Routes.familyAddView, page: FamilyAddView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -129,6 +133,12 @@ class StackedRouter extends RouterBase {
     SurveyView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => const SurveyView(),
+        settings: data,
+      );
+    },
+    FamilyAddView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const FamilyAddView(),
         settings: data,
       );
     },
