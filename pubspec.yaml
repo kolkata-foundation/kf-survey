@@ -37,6 +37,8 @@ dependencies:
   firebase_core: ^1.17.0
   flutterfire_ui: ^0.4.1
   firebase_auth: ^3.3.18
+  stacked: ^2.3.6
+  stacked_services: ^0.8.22+1
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +50,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  build_runner: ^2.1.11
+  stacked_generator: ^0.6.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

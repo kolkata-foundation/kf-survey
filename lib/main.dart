@@ -2,7 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
-import 'package:kf_survey/const.dart';
+import 'package:kf_survey/app/app.locator.dart';
+import 'package:kf_survey/app/app.router.dart';
+import 'package:kf_survey/util/const.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import 'firebase_options.dart';
 
@@ -16,6 +19,7 @@ Future<void> main() async {
     const EmailProviderConfiguration(),
     const GoogleProviderConfiguration(clientId: GOOGLE_AUTH_PROVIDER_CLIENT_ID),
   ]);
+  setupLocator();
   runApp(const MyApp());
 }
 
@@ -26,29 +30,9 @@ class MyApp extends StatelessWidget {
     final auth = FirebaseAuth.instance;
 
     return MaterialApp(
-      initialRoute: auth.currentUser == null ? '/' : '/profile',
-      routes: {
-        '/': (context) {
-          return SignInScreen(
-            // no providerConfigs property - global configuration will be used instead
-            actions: [
-              AuthStateChangeAction<SignedIn>((context, state) {
-                Navigator.pushReplacementNamed(context, '/profile');
-              }),
-            ],
-          );
-        },
-        '/profile': (context) {
-          return ProfileScreen(
-            // no providerConfigs property here as well
-            actions: [
-              SignedOutAction((context) {
-                Navigator.pushReplacementNamed(context, '/');
-              }),
-            ],
-          );
-        },
-      },
+      title: "kf Survey",
+      navigatorKey: StackedService.navigatorKey,
+      onGenerateRoute: StackedRouter().onGenerateRoute,
     );
   }
 }
