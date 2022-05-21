@@ -121,12 +121,26 @@ packages:
     source: hosted
     version: "1.1.0"
   cloud_firestore:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.15"
+  cloud_firestore_odm:
+    dependency: transitive
+    description:
+      name: cloud_firestore_odm
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0-dev.15"
+  cloud_firestore_odm_generator:
+    dependency: "direct dev"
+    description:
+      name: cloud_firestore_odm_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0-dev.15"
   cloud_firestore_platform_interface:
     dependency: transitive
     description:
@@ -470,12 +484,19 @@ packages:
     source: hosted
     version: "0.6.4"
   json_annotation:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.5.0"
+  json_serializable:
+    dependency: "direct dev"
+    description:
+      name: json_serializable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.2.0"
   lints:
     dependency: transitive
     description:
@@ -602,6 +623,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.0"
+  reactive_forms:
+    dependency: "direct main"
+    description:
+      name: reactive_forms
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "12.0.0"
   recase:
     dependency: transitive
     description:
@@ -656,6 +684,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.2"
+  source_helper:
+    dependency: transitive
+    description:
+      name: source_helper
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.2"
   source_span:
     dependency: transitive
     description:

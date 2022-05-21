@@ -16,3 +16,5 @@ const Widget mediumPaddingHorizontal =
     Padding(padding: EdgeInsets.symmetric(horizontal: 16.0));
 const Widget largePaddingHorizontal =
     Padding(padding: EdgeInsets.symmetric(horizontal: 24.0));
+
+const phoneRegex = r'^[6-9]{1}[0-9]{9}$';
