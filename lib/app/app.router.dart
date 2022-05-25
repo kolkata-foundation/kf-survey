@@ -6,36 +6,38 @@
 
 // ignore_for_file: public_member_api_docs
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterfire_ui/auth.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 
+import '../ui/auth/login.dart';
+import '../ui/auth/profile.dart';
 import '../ui/dashboard/dashboard_v.dart';
 import '../ui/family/family_add/family_add_v.dart';
 import '../ui/family/family_v.dart';
 import '../ui/search/search_v.dart';
 import '../ui/splash/splash_v.dart';
+import '../ui/survey/survey_list/survey_list_v.dart';
 import '../ui/survey/survey_v.dart';
 
 class Routes {
   static const String splashView = '/';
-  static const String signInScreen = '/sign-in-screen';
-  static const String profileScreen = '/profile-screen';
+  static const String appLoginView = '/app-login-view';
+  static const String appProfileView = '/app-profile-view';
   static const String dashboardView = '/dashboard-view';
   static const String familyView = '/family-view';
   static const String searchView = '/search-view';
+  static const String surveyListView = '/survey-list-view';
   static const String surveyView = '/survey-view';
   static const String familyAddView = '/family-add-view';
   static const all = <String>{
     splashView,
-    signInScreen,
-    profileScreen,
+    appLoginView,
+    appProfileView,
     dashboardView,
     familyView,
     searchView,
+    surveyListView,
     surveyView,
     familyAddView,
   };
@@ -46,11 +48,12 @@ class StackedRouter extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.splashView, page: SplashView),
-    RouteDef(Routes.signInScreen, page: SignInScreen),
-    RouteDef(Routes.profileScreen, page: ProfileScreen),
+    RouteDef(Routes.appLoginView, page: AppLoginView),
+    RouteDef(Routes.appProfileView, page: AppProfileView),
     RouteDef(Routes.dashboardView, page: DashboardView),
     RouteDef(Routes.familyView, page: FamilyView),
     RouteDef(Routes.searchView, page: SearchView),
+    RouteDef(Routes.surveyListView, page: SurveyListView),
     RouteDef(Routes.surveyView, page: SurveyView),
     RouteDef(Routes.familyAddView, page: FamilyAddView),
   ];
@@ -63,52 +66,21 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
-    SignInScreen: (data) {
-      var args = data.getArgs<SignInScreenArguments>(
-        orElse: () => SignInScreenArguments(),
+    AppLoginView: (data) {
+      var args = data.getArgs<AppLoginViewArguments>(
+        orElse: () => AppLoginViewArguments(),
       );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => SignInScreen(
-          key: args.key,
-          providerConfigs: args.providerConfigs,
-          auth: args.auth,
-          headerMaxExtent: args.headerMaxExtent,
-          headerBuilder: args.headerBuilder,
-          sideBuilder: args.sideBuilder,
-          oauthButtonVariant: args.oauthButtonVariant,
-          desktopLayoutDirection: args.desktopLayoutDirection,
-          resizeToAvoidBottomInset: args.resizeToAvoidBottomInset,
-          showAuthActionSwitch: args.showAuthActionSwitch,
-          email: args.email,
-          subtitleBuilder: args.subtitleBuilder,
-          footerBuilder: args.footerBuilder,
-          loginViewKey: args.loginViewKey,
-          actions: args.actions,
-          breakpoint: args.breakpoint,
-          styles: args.styles,
-        ),
+        builder: (context) => AppLoginView(key: args.key),
         settings: data,
       );
     },
-    ProfileScreen: (data) {
-      var args = data.getArgs<ProfileScreenArguments>(
-        orElse: () => ProfileScreenArguments(),
+    AppProfileView: (data) {
+      var args = data.getArgs<AppProfileViewArguments>(
+        orElse: () => AppProfileViewArguments(),
       );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => ProfileScreen(
-          key: args.key,
-          auth: args.auth,
-          providerConfigs: args.providerConfigs,
-          avatarPlaceholderColor: args.avatarPlaceholderColor,
-          avatarShape: args.avatarShape,
-          avatarSize: args.avatarSize,
-          children: args.children,
-          actions: args.actions,
-          appBar: args.appBar,
-          cupertinoNavigationBar: args.cupertinoNavigationBar,
-          actionCodeSettings: args.actionCodeSettings,
-          styles: args.styles,
-        ),
+        builder: (context) => AppProfileView(key: args.key),
         settings: data,
       );
     },
@@ -119,8 +91,12 @@ class StackedRouter extends RouterBase {
       );
     },
     FamilyView: (data) {
+      var args = data.getArgs<FamilyViewArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const FamilyView(),
+        builder: (context) => FamilyView(
+          familyId: args.familyId,
+          key: args.key,
+        ),
         settings: data,
       );
     },
@@ -130,9 +106,26 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
-    SurveyView: (data) {
+    SurveyListView: (data) {
+      var args = data.getArgs<SurveyListViewArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const SurveyView(),
+        builder: (context) => SurveyListView(
+          familyId: args.familyId,
+          memberId: args.memberId,
+          key: args.key,
+        ),
+        settings: data,
+      );
+    },
+    SurveyView: (data) {
+      var args = data.getArgs<SurveyViewArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SurveyView(
+          surveyId: args.surveyId,
+          familyId: args.familyId,
+          memberId: args.memberId,
+          key: args.key,
+        ),
         settings: data,
       );
     },
@@ -149,70 +142,43 @@ class StackedRouter extends RouterBase {
 /// Arguments holder classes
 /// *************************************************************************
 
-/// SignInScreen arguments holder class
-class SignInScreenArguments {
+/// AppLoginView arguments holder class
+class AppLoginViewArguments {
   final Key? key;
-  final List<ProviderConfiguration>? providerConfigs;
-  final FirebaseAuth? auth;
-  final double? headerMaxExtent;
-  final Widget Function(BuildContext, BoxConstraints, double)? headerBuilder;
-  final Widget Function(BuildContext, BoxConstraints)? sideBuilder;
-  final OAuthButtonVariant? oauthButtonVariant;
-  final TextDirection? desktopLayoutDirection;
-  final bool? resizeToAvoidBottomInset;
-  final bool? showAuthActionSwitch;
-  final String? email;
-  final Widget Function(BuildContext, AuthAction)? subtitleBuilder;
-  final Widget Function(BuildContext, AuthAction)? footerBuilder;
-  final Key? loginViewKey;
-  final List<FlutterFireUIAction> actions;
-  final double breakpoint;
-  final Set<FlutterFireUIStyle>? styles;
-  SignInScreenArguments(
-      {this.key,
-      this.providerConfigs,
-      this.auth,
-      this.headerMaxExtent,
-      this.headerBuilder,
-      this.sideBuilder,
-      this.oauthButtonVariant = OAuthButtonVariant.icon_and_text,
-      this.desktopLayoutDirection,
-      this.resizeToAvoidBottomInset = false,
-      this.showAuthActionSwitch,
-      this.email,
-      this.subtitleBuilder,
-      this.footerBuilder,
-      this.loginViewKey,
-      this.actions = const [],
-      this.breakpoint = 800,
-      this.styles});
+  AppLoginViewArguments({this.key});
 }
 
-/// ProfileScreen arguments holder class
-class ProfileScreenArguments {
+/// AppProfileView arguments holder class
+class AppProfileViewArguments {
   final Key? key;
-  final FirebaseAuth? auth;
-  final List<ProviderConfiguration>? providerConfigs;
-  final Color? avatarPlaceholderColor;
-  final ShapeBorder? avatarShape;
-  final double? avatarSize;
-  final List<Widget> children;
-  final List<FlutterFireUIAction>? actions;
-  final AppBar? appBar;
-  final CupertinoNavigationBar? cupertinoNavigationBar;
-  final ActionCodeSettings? actionCodeSettings;
-  final Set<FlutterFireUIStyle>? styles;
-  ProfileScreenArguments(
-      {this.key,
-      this.auth,
-      this.providerConfigs,
-      this.avatarPlaceholderColor,
-      this.avatarShape,
-      this.avatarSize,
-      this.children = const [],
-      this.actions,
-      this.appBar,
-      this.cupertinoNavigationBar,
-      this.actionCodeSettings,
-      this.styles});
+  AppProfileViewArguments({this.key});
+}
+
+/// FamilyView arguments holder class
+class FamilyViewArguments {
+  final String familyId;
+  final Key? key;
+  FamilyViewArguments({required this.familyId, this.key});
+}
+
+/// SurveyListView arguments holder class
+class SurveyListViewArguments {
+  final String familyId;
+  final String memberId;
+  final Key? key;
+  SurveyListViewArguments(
+      {required this.familyId, required this.memberId, this.key});
+}
+
+/// SurveyView arguments holder class
+class SurveyViewArguments {
+  final String surveyId;
+  final String familyId;
+  final String memberId;
+  final Key? key;
+  SurveyViewArguments(
+      {required this.surveyId,
+      required this.familyId,
+      required this.memberId,
+      this.key});
 }

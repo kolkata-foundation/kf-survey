@@ -178,6 +178,23 @@ class AddMemberCard extends StatelessWidget {
                 keyboardType: TextInputType.number,
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ReactiveDropdownField(
+                key: ObjectKey(form.control('gender') as FormControl<String>),
+                formControl: form.control('gender') as FormControl,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  label: Text("Gender"),
+                ),
+                items: [
+                  ...genders.map((gender) => DropdownMenuItem(
+                        value: gender,
+                        child: Text(gender),
+                      ))
+                ],
+              ),
+            ),
             Row(
               children: [
                 IconButton(

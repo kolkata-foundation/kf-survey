@@ -46,6 +46,9 @@ class FamilyAddViewModel extends BaseViewModel {
           Validators.maxLength(10),
           Validators.pattern(phoneRegex),
         ]),
+        'gender': FormControl<String>(validators: [
+          Validators.required,
+        ]),
       }),
     );
     notifyListeners();

@@ -4,7 +4,15 @@ import 'package:stacked/stacked.dart';
 import 'survey_vm.dart';
 
 class SurveyView extends StatelessWidget {
-  const SurveyView({Key? key}) : super(key: key);
+  final String surveyId;
+  final String familyId;
+  final String memberId;
+  const SurveyView({
+    required this.surveyId,
+    required this.familyId,
+    required this.memberId,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +21,9 @@ class SurveyView extends StatelessWidget {
         appBar: AppBar(
           title: Text("Survey"),
         ),
+        body: ListView(children: []),
       ),
-      viewModelBuilder: () => SurveyViewModel(),
+      viewModelBuilder: () => SurveyViewModel(surveyId, familyId, memberId),
     );
   }
 }

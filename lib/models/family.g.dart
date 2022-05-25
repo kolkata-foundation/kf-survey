@@ -32,10 +32,14 @@ Member _$MemberFromJson(Map<String, dynamic> json) => Member(
       name: json['name'] as String,
       age: json['age'] as int,
       phone: json['phone'] as String,
+      gender: json['gender'] as String,
+      member_id: json['member_id'] as String,
     );
 
 Map<String, dynamic> _$MemberToJson(Member instance) => <String, dynamic>{
       'name': instance.name,
       'age': instance.age,
       'phone': instance.phone,
+      'member_id': instance.member_id,
+      'gender': instance.gender,
     };

@@ -29,11 +29,15 @@ class Member {
   final String name;
   final int age;
   final String phone;
+  final String member_id;
+  final String gender;
 
   Member({
     required this.name,
     required this.age,
     required this.phone,
+    required this.gender,
+    required this.member_id,
   });
 
   factory Member.fromJson(Map<String, Object?> json) => _$MemberFromJson(json);

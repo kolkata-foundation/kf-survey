@@ -25,3 +25,4 @@ class Pair<T1, T2> {
 }
 
 List<String> localities = ["Sunderban"];
+List<String> genders = ["Male", "Female", "Others"];

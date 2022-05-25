@@ -100,6 +100,7 @@ class DashboardView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     tileColor: Colors.teal.shade100,
+                    onTap: () => {model.onFamilyTap(snapshot.id)},
                   ),
                 );
               },
