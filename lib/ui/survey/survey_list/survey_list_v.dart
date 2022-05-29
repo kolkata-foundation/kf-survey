@@ -17,21 +17,27 @@ class SurveyListView extends StatelessWidget {
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(title: const Text("Select survey")),
         body: ListView(children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text("Select a survey"),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: Text("Survey 1"),
-              tileColor: Colors.red.shade100,
-              onTap: () => {model.surveySelected("0")},
-            ),
-          ),
+          ...model.surveys.entries
+              .map(
+                (e) => (e.value.active)
+                    ? Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          title: Text(e.value.name),
+                          onTap: () => model.surveySelected(e.key),
+                        ),
+                      )
+                    : Container(),
+              )
+              .toList(),
         ]),
       ),
       viewModelBuilder: () => SurveyListViewModel(familyId, memberId),
+      onModelReady: (model) => model.initialize(),
     );
   }
 }

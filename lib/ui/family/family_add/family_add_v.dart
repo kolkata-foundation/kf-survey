@@ -54,52 +54,52 @@ class FamilyAddView extends StatelessWidget {
                                   onChanged: model.onDistrictChange,
                                 ),
                               ),
-                              if (model.family_add_form.value['district'] !=
-                                  null)
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: ReactiveDropdownField(
-                                    formControlName: 'subdivision',
-                                    decoration: const InputDecoration(
-                                      border: OutlineInputBorder(),
-                                      label: Text("Subdivision"),
-                                    ),
-                                    items: [
-                                      ...model.subdivisions
-                                          .map(
-                                            (subdivision) => DropdownMenuItem(
-                                              value: subdivision.name,
-                                              child: Text(subdivision.name),
-                                            ),
-                                          )
-                                          .toList(),
-                                    ],
-                                    onChanged: model.onSubDivisionChange,
+                              // if (model.family_add_form.value['district'] !=
+                              //     null)
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ReactiveDropdownField(
+                                  formControlName: 'subdivision',
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    label: Text("Subdivision"),
                                   ),
+                                  items: [
+                                    ...model.subdivisions
+                                        .map(
+                                          (subdivision) => DropdownMenuItem(
+                                            value: subdivision.name,
+                                            child: Text(subdivision.name),
+                                          ),
+                                        )
+                                        .toList(),
+                                  ],
+                                  onChanged: model.onSubDivisionChange,
                                 ),
-                              if (model.family_add_form.value['subdivision'] !=
-                                  null)
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: ReactiveDropdownField(
-                                    formControlName: 'block',
-                                    decoration: const InputDecoration(
-                                      border: OutlineInputBorder(),
-                                      label: Text("Block"),
-                                    ),
-                                    items: [
-                                      ...model.blocks
-                                          .map(
-                                            (block) => DropdownMenuItem(
-                                              value: block,
-                                              child: Text(block),
-                                            ),
-                                          )
-                                          .toList(),
-                                    ],
-                                    onChanged: model.onSubDivisionChange,
+                              ),
+                              // if (model.family_add_form.value['subdivision'] !=
+                              //     null)
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ReactiveDropdownField(
+                                  formControlName: 'block',
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    label: Text("Block"),
                                   ),
+                                  items: [
+                                    ...model.blocks
+                                        .map(
+                                          (block) => DropdownMenuItem(
+                                            value: block,
+                                            child: Text(block),
+                                          ),
+                                        )
+                                        .toList(),
+                                  ],
+                                  onChanged: model.onSubDivisionChange,
                                 ),
+                              ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: ReactiveTextField(

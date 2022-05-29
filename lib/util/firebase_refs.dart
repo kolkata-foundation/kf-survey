@@ -11,3 +11,5 @@ final configDocumentRef = FirebaseFirestore.instance
     .withConverter<Config>(
         fromFirestore: (snapshot, _) => Config.fromJson(snapshot.data()!),
         toFirestore: (config, _) => config.toJson());
+
+final surveyCollection = FirebaseFirestore.instance.collection('survey');
