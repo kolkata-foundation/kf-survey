@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kf_survey/app/app.locator.dart';
 import 'package:kf_survey/app/app.snackbar.dart';
+import 'package:kf_survey/models/config.dart';
 import 'package:kf_survey/util/const.dart';
 import 'package:kf_survey/util/firebase_refs.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -21,15 +22,46 @@ class FamilyAddViewModel extends BaseViewModel {
       Validators.maxLength(10),
       Validators.pattern(phoneRegex),
     ]),
-    'locality': FormControl<String>(validators: [
+    'district': FormControl<String>(validators: [
+      Validators.required,
+    ]),
+    'subdivision': FormControl<String>(validators: [
+      Validators.required,
+    ]),
+    'block': FormControl<String>(validators: [
       Validators.required,
     ]),
     'members': FormArray<Map<String, dynamic>>([]),
   });
+  Config? config;
+  List<District> districts = [];
+  List<Subdivision> subdivisions = [];
+  List<String> blocks = [];
 
   FormArray? get members => family_add_form.control('members') as FormArray;
 
-  void initialise() {}
+  void initialise() async {
+    setBusy(true);
+    config = (await configDocumentRef.get()).data();
+    districts = config?.districts ?? [];
+    setBusy(false);
+  }
+
+  onDistrictChange(districtName) {
+    subdivisions = districts
+        .where((element) => element.name == districtName)
+        .first
+        .subdivisions;
+    notifyListeners();
+  }
+
+  onSubDivisionChange(subDivisionName) {
+    blocks = subdivisions
+        .where((element) => element.name == subDivisionName)
+        .first
+        .blocks;
+    notifyListeners();
+  }
 
   void addMember() {
     members?.add(
