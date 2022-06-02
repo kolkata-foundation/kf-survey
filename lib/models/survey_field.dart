@@ -97,6 +97,16 @@ class TextInputSurveyField extends SurveyField {
       _$TextInputSurveyFieldFromJson(json);
   @override
   Map<String, Object?> toJson() => _$TextInputSurveyFieldToJson(this);
+  @override
+  Widget toWidget(String controlName) {
+    return ReactiveTextField(
+      formControlName: controlName,
+      decoration: InputDecoration(
+        label: Text(label),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
+      ),
+    );
+  }
 }
 
 @JsonSerializable()
