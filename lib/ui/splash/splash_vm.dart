@@ -10,7 +10,7 @@ class SplashViewModel extends BaseViewModel {
 
   initialise() async {
     // TODO: Remove this
-    await Future.delayed(const Duration(seconds: 2));
+    // await Future.delayed(const Duration(minutes: 2));
 
     if (FirebaseAuth.instance.currentUser == null) {
       _navigationService.replaceWith(Routes.appLoginView);

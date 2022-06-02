@@ -198,9 +198,8 @@ class SurveySummaryView extends StatelessWidget {
                                     TableCell(child: Text(field.name)),
                                     TableCell(
                                       child: Text((form?.value[section.name]
-                                                  as Map)[field.name]
-                                              .toString() ??
-                                          ""),
+                                              as Map)[field.name]
+                                          .toString()),
                                     )
                                   ],
                                 ),
