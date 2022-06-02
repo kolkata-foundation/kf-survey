@@ -7,7 +7,7 @@ get currentUserUid => FirebaseAuth.instance.currentUser?.uid;
 
 final configDocumentRef = FirebaseFirestore.instance
     .collection('config')
-    .doc('Tt2JVi4SPH7GB7MA2UTK')
+    .doc('v1')
     .withConverter<Config>(
         fromFirestore: (snapshot, _) => Config.fromJson(snapshot.data()!),
         toFirestore: (config, _) => config.toJson());

@@ -41,6 +41,7 @@ dependencies:
   stacked_services: ^0.8.22+1
   cloud_firestore: ^3.1.15
   reactive_forms: ^13.0.0
+  uuid: ^3.0.6
 
 dev_dependencies:
   flutter_test:

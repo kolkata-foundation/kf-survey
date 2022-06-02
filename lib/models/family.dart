@@ -6,7 +6,9 @@ part 'family.g.dart';
 class Family {
   final String last_name;
   final String phone;
-  final String locality;
+  final String district;
+  final String subdivision;
+  final String block;
   final List<Member> members;
   final List<String> modified_by;
   final int modified_on;
@@ -14,7 +16,9 @@ class Family {
   Family({
     required this.last_name,
     required this.phone,
-    required this.locality,
+    required this.district,
+    required this.subdivision,
+    required this.block,
     required this.members,
     required this.modified_by,
     required this.modified_on,

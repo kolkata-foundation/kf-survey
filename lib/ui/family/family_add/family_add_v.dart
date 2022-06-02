@@ -54,8 +54,6 @@ class FamilyAddView extends StatelessWidget {
                                   onChanged: model.onDistrictChange,
                                 ),
                               ),
-                              // if (model.family_add_form.value['district'] !=
-                              //     null)
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: ReactiveDropdownField(
@@ -77,8 +75,6 @@ class FamilyAddView extends StatelessWidget {
                                   onChanged: model.onSubDivisionChange,
                                 ),
                               ),
-                              // if (model.family_add_form.value['subdivision'] !=
-                              //     null)
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: ReactiveDropdownField(

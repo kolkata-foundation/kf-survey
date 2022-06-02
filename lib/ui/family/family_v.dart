@@ -24,7 +24,7 @@ class FamilyView extends StatelessWidget {
                   child: ListTile(
                     title: Text(model.family?.last_name ?? ""),
                     subtitle: Text(
-                      "${model.family?.locality ?? ""} ${model.family?.phone ?? ""}",
+                      "${model.family?.block ?? ""} ${model.family?.phone ?? ""}",
                     ),
                     leading: const Padding(
                       padding: EdgeInsets.all(8.0),

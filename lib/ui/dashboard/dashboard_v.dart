@@ -90,7 +90,7 @@ class DashboardView extends StatelessWidget {
                   child: ListTile(
                     title: Text(family?.last_name ?? ""),
                     subtitle: Text(
-                      "${family?.locality ?? ""} ${family?.phone ?? ""}",
+                      "${family?.block ?? ""} ${family?.phone ?? ""}",
                     ),
                     leading: const Padding(
                       padding: EdgeInsets.all(8.0),

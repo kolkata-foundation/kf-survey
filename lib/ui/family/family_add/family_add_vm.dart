@@ -7,10 +7,12 @@ import 'package:kf_survey/util/firebase_refs.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:uuid/uuid.dart';
 
 class FamilyAddViewModel extends BaseViewModel {
   final _navigationService = locator.get<NavigationService>();
   final _snackbarService = locator.get<SnackbarService>();
+  final _uuid = const Uuid();
 
   final family_add_form = FormGroup({
     'last_name': FormControl<String>(validators: [
@@ -74,12 +76,12 @@ class FamilyAddViewModel extends BaseViewModel {
           Validators.number,
         ]),
         'phone': FormControl<String>(validators: [
-          Validators.number,
           Validators.maxLength(10),
         ]),
         'gender': FormControl<String>(validators: [
           Validators.required,
         ]),
+        'member_id': FormControl<String>(value: _uuid.v4()),
       }),
     );
     notifyListeners();

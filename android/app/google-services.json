@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1024045374735",
-    "project_id": "kf-survey-fc78d",
-    "storage_bucket": "kf-survey-fc78d.appspot.com"
+    "project_number": "667429940688",
+    "firebase_url": "https://kf-survey.firebaseio.com",
+    "project_id": "kf-survey",
+    "storage_bucket": "kf-survey.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1024045374735:android:ac3060e401a66a7779f27a",
+        "mobilesdk_app_id": "1:667429940688:android:c0a3173554bba77b3c5dd5",
         "android_client_info": {
           "package_name": "com.example.kf_survey"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1024045374735-tvbv9n4fkad8impok3akunurt5io310o.apps.googleusercontent.com",
+          "client_id": "667429940688-su6e8kc9mj11d984qgbv6q1nnjcaehrs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDUgcshWnnzl4h-TPLVMb75pvMY7WBkJ6I"
+          "current_key": "AIzaSyD9F4ygH2pl77Y10HODxIXnJDrzUKRZcwc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1024045374735-tvbv9n4fkad8impok3akunurt5io310o.apps.googleusercontent.com",
+              "client_id": "667429940688-su6e8kc9mj11d984qgbv6q1nnjcaehrs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

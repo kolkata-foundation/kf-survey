@@ -44,40 +44,43 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBYTziMXt6IyAOHAlfwoMQjHUp1oQWwJhc',
-    appId: '1:1024045374735:web:4414d6c11f6d125d79f27a',
-    messagingSenderId: '1024045374735',
-    projectId: 'kf-survey-fc78d',
-    authDomain: 'kf-survey-fc78d.firebaseapp.com',
-    storageBucket: 'kf-survey-fc78d.appspot.com',
-    measurementId: 'G-54ZWLK10PL',
+    apiKey: 'AIzaSyAoDev75VaFC3V0S1PkwnDuv1Snp57LsEg',
+    appId: '1:667429940688:web:4113c9a22979cb0a3c5dd5',
+    messagingSenderId: '667429940688',
+    projectId: 'kf-survey',
+    authDomain: 'kf-survey.firebaseapp.com',
+    databaseURL: 'https://kf-survey.firebaseio.com',
+    storageBucket: 'kf-survey.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDUgcshWnnzl4h-TPLVMb75pvMY7WBkJ6I',
-    appId: '1:1024045374735:android:ac3060e401a66a7779f27a',
-    messagingSenderId: '1024045374735',
-    projectId: 'kf-survey-fc78d',
-    storageBucket: 'kf-survey-fc78d.appspot.com',
+    apiKey: 'AIzaSyD9F4ygH2pl77Y10HODxIXnJDrzUKRZcwc',
+    appId: '1:667429940688:android:c0a3173554bba77b3c5dd5',
+    messagingSenderId: '667429940688',
+    projectId: 'kf-survey',
+    databaseURL: 'https://kf-survey.firebaseio.com',
+    storageBucket: 'kf-survey.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB7KxxnLRT6M0KPpVAoUvOJHTGmOn8Rs5Q',
-    appId: '1:1024045374735:ios:0f11d45ecd66c61779f27a',
-    messagingSenderId: '1024045374735',
-    projectId: 'kf-survey-fc78d',
-    storageBucket: 'kf-survey-fc78d.appspot.com',
-    iosClientId: '1024045374735-qtrufe7frarrdpqjrqacldjao8puq6l5.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBAIyDOB1dLrZyjeUEwj5FUQr3LoTx2PZg',
+    appId: '1:667429940688:ios:322eda3849dac5263c5dd5',
+    messagingSenderId: '667429940688',
+    projectId: 'kf-survey',
+    databaseURL: 'https://kf-survey.firebaseio.com',
+    storageBucket: 'kf-survey.appspot.com',
+    iosClientId: '667429940688-5lpnfvjo5cjmef66ffiovtqjj6s0gov9.apps.googleusercontent.com',
     iosBundleId: 'com.example.kfSurvey',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyB7KxxnLRT6M0KPpVAoUvOJHTGmOn8Rs5Q',
-    appId: '1:1024045374735:ios:0f11d45ecd66c61779f27a',
-    messagingSenderId: '1024045374735',
-    projectId: 'kf-survey-fc78d',
-    storageBucket: 'kf-survey-fc78d.appspot.com',
-    iosClientId: '1024045374735-qtrufe7frarrdpqjrqacldjao8puq6l5.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBAIyDOB1dLrZyjeUEwj5FUQr3LoTx2PZg',
+    appId: '1:667429940688:ios:322eda3849dac5263c5dd5',
+    messagingSenderId: '667429940688',
+    projectId: 'kf-survey',
+    databaseURL: 'https://kf-survey.firebaseio.com',
+    storageBucket: 'kf-survey.appspot.com',
+    iosClientId: '667429940688-5lpnfvjo5cjmef66ffiovtqjj6s0gov9.apps.googleusercontent.com',
     iosBundleId: 'com.example.kfSurvey',
   );
 }

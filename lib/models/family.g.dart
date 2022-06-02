@@ -9,7 +9,9 @@ part of 'family.dart';
 Family _$FamilyFromJson(Map<String, dynamic> json) => Family(
       last_name: json['last_name'] as String,
       phone: json['phone'] as String,
-      locality: json['locality'] as String,
+      district: json['district'] as String,
+      subdivision: json['subdivision'] as String,
+      block: json['block'] as String,
       members: (json['members'] as List<dynamic>)
           .map((e) => Member.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -22,7 +24,9 @@ Family _$FamilyFromJson(Map<String, dynamic> json) => Family(
 Map<String, dynamic> _$FamilyToJson(Family instance) => <String, dynamic>{
       'last_name': instance.last_name,
       'phone': instance.phone,
-      'locality': instance.locality,
+      'district': instance.district,
+      'subdivision': instance.subdivision,
+      'block': instance.block,
       'members': instance.members,
       'modified_by': instance.modified_by,
       'modified_on': instance.modified_on,
