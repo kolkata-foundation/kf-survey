@@ -49,6 +49,7 @@ class SurveyViewModel extends BaseViewModel {
   }
 
   void submit() {
+    print((form.value["general"] as Map)["blood pressure"]);
     print(form.value);
   }
 }

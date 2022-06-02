@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kf_survey/models/family.dart';
 import 'package:kf_survey/models/survey.dart';
+import 'package:kf_survey/models/survey_field.dart';
 import 'package:kf_survey/util/commons.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:stacked/stacked.dart';
@@ -143,15 +144,72 @@ class SurveySummaryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("Survey ${survey?.name}"),
-        Text("Family ${family?.last_name}"),
-        if (memberId != "0")
-          Text(
-            "Member ${family?.members.where((element) => element.member_id == memberId).first.name}",
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            child: Table(
+              columnWidths: const {
+                0: FlexColumnWidth(3),
+                1: FlexColumnWidth(7),
+              },
+              children: [
+                TableRow(children: [
+                  TableCell(child: Text("Survey")),
+                  TableCell(child: Text(survey?.name ?? "")),
+                ]),
+                TableRow(children: [
+                  TableCell(child: Text("Family")),
+                  TableCell(child: Text(family?.last_name ?? "")),
+                ]),
+                if (memberId != "0")
+                  TableRow(children: [
+                    TableCell(child: Text("Member")),
+                    TableCell(
+                        child: Text(family?.members
+                                .where(
+                                    (element) => element.member_id == memberId)
+                                .first
+                                .name ??
+                            "")),
+                  ]),
+              ],
+            ),
           ),
+        ),
         ...survey?.sections.map(
-              (section) => Card(
-                child: Column(children: [Text(section.name)]),
+              (section) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  child: Column(
+                    children: [
+                      Text(section.label),
+                      Table(
+                        columnWidths: const {
+                          0: FlexColumnWidth(3),
+                          1: FlexColumnWidth(7),
+                        },
+                        children: [
+                          ...section.survey_fields
+                              .where((field) => !["text_fixed", "image_fixed"]
+                                  .contains(field.type))
+                              .map(
+                                (field) => TableRow(
+                                  children: [
+                                    TableCell(child: Text(field.name)),
+                                    TableCell(
+                                      child: Text((form?.value[section.name]
+                                                  as Map)[field.name]
+                                              .toString() ??
+                                          ""),
+                                    )
+                                  ],
+                                ),
+                              ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ) ??
             []

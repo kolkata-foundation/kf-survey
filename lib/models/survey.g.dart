@@ -23,6 +23,7 @@ Map<String, dynamic> _$SurveyToJson(Survey instance) => <String, dynamic>{
 SurveySection _$SurveySectionFromJson(Map<String, dynamic> json) =>
     SurveySection(
       name: json['name'] as String,
+      label: json['label'] as String,
       index: json['index'] as int,
       survey_fields: jsonToSurveyFields(json['survey_fields'] as List),
     );
@@ -30,6 +31,7 @@ SurveySection _$SurveySectionFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$SurveySectionToJson(SurveySection instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'label': instance.label,
       'index': instance.index,
       'survey_fields': surveyFieldsToJson(instance.survey_fields),
     };

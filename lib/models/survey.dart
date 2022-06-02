@@ -21,6 +21,7 @@ class Survey {
 @JsonSerializable()
 class SurveySection {
   final String name;
+  final String label;
   final int index;
 
   @JsonKey(fromJson: jsonToSurveyFields, toJson: surveyFieldsToJson)
@@ -28,6 +29,7 @@ class SurveySection {
 
   SurveySection({
     required this.name,
+    required this.label,
     required this.index,
     required this.survey_fields,
   });
