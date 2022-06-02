@@ -25,99 +25,100 @@ class SurveyView extends StatelessWidget {
         appBar: AppBar(
           title: Text(model.survey?.name ?? "Loading..."),
         ),
-        body: Stack(
-          children: [
-            ReactiveForm(
-              formGroup: model.form,
-              child: ListView(
-                children: [
-                  ...model.survey?.sections
-                          .asMap()
-                          .map((index, section) => MapEntry(
-                              index,
-                              (model.pageIndex == index)
-                                  ? Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            section.name,
-                                            style: const TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
+        body: (model.isBusy)
+            ? const LoadingScreen(
+                opacity: 1.0,
+              )
+            : ReactiveForm(
+                formGroup: model.form,
+                child: ListView(
+                  children: [
+                    ...model.survey?.sections
+                            .asMap()
+                            .map((index, section) => MapEntry(
+                                index,
+                                (model.pageIndex == index)
+                                    ? Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              section.name,
+                                              style: const TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        Card(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width),
-                                              ...section.survey_fields.map(
-                                                (surveyField) => Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: surveyField.toWidget(
-                                                      "${section.name}.${surveyField.name}"),
+                                          Card(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                SizedBox(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width),
+                                                ...section.survey_fields.map(
+                                                  (surveyField) => Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: surveyField.toWidget(
+                                                        "${section.name}.${surveyField.name}"),
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    )
-                                  : Container()))
-                          .values
-                          .toList() ??
-                      [],
-                  if (model.pageIndex == model.sectionCount)
-                    SurveySummaryView(
-                        model.family, model.memberId, model.survey, model.form),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      if (model.pageIndex != 0)
-                        ElevatedButton(
-                          onPressed: model.prevPage,
-                          child: Row(
-                            children: const [
-                              Icon(Icons.chevron_left),
-                              Text("Previous"),
-                            ],
+                                        ],
+                                      )
+                                    : Container()))
+                            .values
+                            .toList() ??
+                        [],
+                    if (model.pageIndex == model.sectionCount)
+                      SurveySummaryView(model.family, model.memberId,
+                          model.survey, model.form),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        if (model.pageIndex != 0)
+                          ElevatedButton(
+                            onPressed: model.prevPage,
+                            child: Row(
+                              children: const [
+                                Icon(Icons.chevron_left),
+                                Text("Previous"),
+                              ],
+                            ),
                           ),
-                        ),
-                      if (model.pageIndex != model.sectionCount)
-                        ElevatedButton(
-                          onPressed: model.nextPage,
-                          child: Row(
-                            children: const [
-                              Text("Next"),
-                              Icon(Icons.chevron_right),
-                            ],
+                        if (model.pageIndex != model.sectionCount)
+                          ElevatedButton(
+                            onPressed: model.nextPage,
+                            child: Row(
+                              children: const [
+                                Text("Next"),
+                                Icon(Icons.chevron_right),
+                              ],
+                            ),
                           ),
-                        ),
-                      if (model.pageIndex == model.sectionCount)
-                        ElevatedButton(
-                          onPressed: model.submit,
-                          child: Row(
-                            children: const [
-                              Text("Submit"),
-                              Icon(Icons.check),
-                            ],
+                        if (model.pageIndex == model.sectionCount)
+                          ElevatedButton(
+                            onPressed: model.submit,
+                            child: Row(
+                              children: const [
+                                Text("Submit"),
+                                Icon(Icons.check),
+                              ],
+                            ),
                           ),
-                        ),
-                    ],
-                  )
-                ],
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-            if (model.isBusy) const LoadingScreen(),
-          ],
-        ),
       ),
       viewModelBuilder: () => SurveyViewModel(surveyId, familyId, memberId),
       onModelReady: (model) => model.initialize(),

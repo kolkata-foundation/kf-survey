@@ -100,10 +100,10 @@ class TextInputSurveyField extends SurveyField {
 }
 
 @JsonSerializable()
-class ToggleInputSurveyField extends SurveyField {
+class ToggleSurveyField extends SurveyField {
   final String label;
 
-  ToggleInputSurveyField({
+  ToggleSurveyField({
     required String name,
     required bool active,
     required this.label,
@@ -113,10 +113,17 @@ class ToggleInputSurveyField extends SurveyField {
           name: name,
         );
 
-  factory ToggleInputSurveyField.fromJson(Map<String, Object?> json) =>
-      _$ToggleInputSurveyFieldFromJson(json);
+  factory ToggleSurveyField.fromJson(Map<String, Object?> json) =>
+      _$ToggleSurveyFieldFromJson(json);
   @override
-  Map<String, Object?> toJson() => _$ToggleInputSurveyFieldToJson(this);
+  Map<String, Object?> toJson() => _$ToggleSurveyFieldToJson(this);
+  @override
+  Widget toWidget(String controlName) {
+    return ReactiveSwitchListTile(
+      formControlName: controlName,
+      title: Text(label),
+    );
+  }
 }
 
 @JsonSerializable()
@@ -144,6 +151,7 @@ class CheckboxSurveyField extends SurveyField {
       formControlName: controlName,
       title: Text(label),
       controlAffinity: ListTileControlAffinity.leading,
+      dense: true,
     );
   }
 }

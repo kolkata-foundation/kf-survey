@@ -4,12 +4,13 @@ import 'package:kf_survey/models/survey_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class LoadingScreen extends StatelessWidget {
-  const LoadingScreen({Key? key}) : super(key: key);
+  final double opacity;
+  const LoadingScreen({Key? key, this.opacity = 0.5}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Opacity(
-      opacity: 0.5,
+      opacity: opacity,
       child: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -47,7 +48,7 @@ FormGroup surveyToFormGroup(Survey survey) {
 
 MapEntry<String, FormControl> fieldToControl(SurveyField field) {
   switch (field.type) {
-    case "toogle_input":
+    case "toggle":
     case "checkbox":
       return MapEntry(field.name, fb.control<bool>(false));
     case "text_fixed":

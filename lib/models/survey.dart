@@ -46,8 +46,8 @@ List<SurveyField> jsonToSurveyFields(List<dynamic> fields) {
         return ImageFixedSurveyField.fromJson(json);
       case "text_input":
         return TextInputSurveyField.fromJson(json);
-      case "toogle_input":
-        return ToggleInputSurveyField.fromJson(json);
+      case "toggle":
+        return ToggleSurveyField.fromJson(json);
       case "checkbox":
         return CheckboxSurveyField.fromJson(json);
       default:

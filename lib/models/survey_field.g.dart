@@ -74,16 +74,14 @@ Map<String, dynamic> _$TextInputSurveyFieldToJson(
       'max_size': instance.max_size,
     };
 
-ToggleInputSurveyField _$ToggleInputSurveyFieldFromJson(
-        Map<String, dynamic> json) =>
-    ToggleInputSurveyField(
+ToggleSurveyField _$ToggleSurveyFieldFromJson(Map<String, dynamic> json) =>
+    ToggleSurveyField(
       name: json['name'] as String,
       active: json['active'] as bool,
       label: json['label'] as String,
     )..type = json['type'] as String;
 
-Map<String, dynamic> _$ToggleInputSurveyFieldToJson(
-        ToggleInputSurveyField instance) =>
+Map<String, dynamic> _$ToggleSurveyFieldToJson(ToggleSurveyField instance) =>
     <String, dynamic>{
       'active': instance.active,
       'type': instance.type,
