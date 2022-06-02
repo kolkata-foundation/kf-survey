@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:reactive_forms/reactive_forms.dart';
 
 part 'survey_field.g.dart';
 
@@ -17,6 +19,10 @@ class SurveyField {
   factory SurveyField.fromJson(Map<String, Object?> json) =>
       _$SurveyFieldFromJson(json);
   Map<String, Object?> toJson() => _$SurveyFieldToJson(this);
+
+  Widget toWidget(String controlName) {
+    return Container();
+  }
 }
 
 @JsonSerializable()
@@ -39,6 +45,16 @@ class TextFixedSurveyField extends SurveyField {
       _$TextFixedSurveyFieldFromJson(json);
   @override
   Map<String, Object?> toJson() => _$TextFixedSurveyFieldToJson(this);
+
+  @override
+  Widget toWidget(String controlName) {
+    return Text(
+      display_text,
+      style: TextStyle(
+        fontSize: font_size.toDouble(),
+      ),
+    );
+  }
 }
 
 @JsonSerializable()
@@ -101,4 +117,33 @@ class ToggleInputSurveyField extends SurveyField {
       _$ToggleInputSurveyFieldFromJson(json);
   @override
   Map<String, Object?> toJson() => _$ToggleInputSurveyFieldToJson(this);
+}
+
+@JsonSerializable()
+class CheckboxSurveyField extends SurveyField {
+  final String label;
+
+  CheckboxSurveyField({
+    required String name,
+    required bool active,
+    required this.label,
+  }) : super(
+          active: active,
+          type: "checkbox",
+          name: name,
+        );
+
+  factory CheckboxSurveyField.fromJson(Map<String, Object?> json) =>
+      _$CheckboxSurveyFieldFromJson(json);
+  @override
+  Map<String, Object?> toJson() => _$CheckboxSurveyFieldToJson(this);
+
+  @override
+  Widget toWidget(String controlName) {
+    return ReactiveCheckboxListTile(
+      formControlName: controlName,
+      title: Text(label),
+      controlAffinity: ListTileControlAffinity.leading,
+    );
+  }
 }

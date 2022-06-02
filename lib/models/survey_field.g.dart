@@ -90,3 +90,19 @@ Map<String, dynamic> _$ToggleInputSurveyFieldToJson(
       'name': instance.name,
       'label': instance.label,
     };
+
+CheckboxSurveyField _$CheckboxSurveyFieldFromJson(Map<String, dynamic> json) =>
+    CheckboxSurveyField(
+      name: json['name'] as String,
+      active: json['active'] as bool,
+      label: json['label'] as String,
+    )..type = json['type'] as String;
+
+Map<String, dynamic> _$CheckboxSurveyFieldToJson(
+        CheckboxSurveyField instance) =>
+    <String, dynamic>{
+      'active': instance.active,
+      'type': instance.type,
+      'name': instance.name,
+      'label': instance.label,
+    };

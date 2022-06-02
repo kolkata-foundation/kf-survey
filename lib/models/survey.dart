@@ -48,6 +48,8 @@ List<SurveyField> jsonToSurveyFields(List<dynamic> fields) {
         return TextInputSurveyField.fromJson(json);
       case "toogle_input":
         return ToggleInputSurveyField.fromJson(json);
+      case "checkbox":
+        return CheckboxSurveyField.fromJson(json);
       default:
         return SurveyField(
           name: "name",
