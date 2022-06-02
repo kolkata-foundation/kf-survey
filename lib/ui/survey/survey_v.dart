@@ -142,6 +142,7 @@ class SurveySummaryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(memberId);
     return Column(
       children: [
         Padding(

@@ -23,7 +23,10 @@ class FamilyViewModel extends BaseViewModel {
 
   newMemberSurvey(Member member) {
     _navigationService.navigateTo(Routes.surveyListView,
-        arguments: SurveyListViewArguments(familyId: familyId, memberId: "0"));
+        arguments: SurveyListViewArguments(
+          familyId: familyId,
+          memberId: member.member_id,
+        ));
   }
 
   newFamilySurvey() {

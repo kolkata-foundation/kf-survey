@@ -13,3 +13,6 @@ final configDocumentRef = FirebaseFirestore.instance
         toFirestore: (config, _) => config.toJson());
 
 final surveyCollection = FirebaseFirestore.instance.collection('survey');
+
+final surveyResultCollection =
+    FirebaseFirestore.instance.collection('survey_result');

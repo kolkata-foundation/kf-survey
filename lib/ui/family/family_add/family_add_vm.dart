@@ -87,14 +87,10 @@ class FamilyAddViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void onSubmit() {
+  Future<void> onSubmit() async {
     setBusy(true);
-    print({
-      ...family_add_form.value,
-      'created_by': FirebaseAuth.instance.currentUser?.uid,
-    });
     try {
-      familyCollection.add({
+      await familyCollection.add({
         ...family_add_form.value,
         'modified_by': [FirebaseAuth.instance.currentUser?.uid],
         'modified_on': DateTime.now().millisecondsSinceEpoch,

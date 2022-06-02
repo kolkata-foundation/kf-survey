@@ -1,11 +1,13 @@
-import 'dart:convert';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:kf_survey/app/app.locator.dart';
+import 'package:kf_survey/app/app.snackbar.dart';
 import 'package:kf_survey/models/family.dart';
 import 'package:kf_survey/models/survey.dart';
 import 'package:kf_survey/util/commons.dart';
 import 'package:kf_survey/util/firebase_refs.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class SurveyViewModel extends BaseViewModel {
   final String surveyId;
@@ -18,6 +20,8 @@ class SurveyViewModel extends BaseViewModel {
 
   SurveyViewModel(this.surveyId, this.familyId, this.memberId);
 
+  final _snackbarService = locator.get<SnackbarService>();
+  final _navigationService = locator.get<NavigationService>();
   int get sectionCount => survey?.sections.length ?? 0;
 
   initialize() async {
@@ -25,13 +29,7 @@ class SurveyViewModel extends BaseViewModel {
 
     survey =
         Survey.fromJson((await surveyCollection.doc(surveyId).get()).data()!);
-
-    print(JsonEncoder.withIndent('\t').convert(survey));
-
     form = surveyToFormGroup(survey!);
-
-    print(form?.value);
-
     family =
         Family.fromJson((await familyCollection.doc(familyId).get()).data()!);
 
@@ -48,8 +46,32 @@ class SurveyViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void submit() {
-    print((form.value["general"] as Map)["blood pressure"]);
-    print(form.value);
+  Future<void> submit() async {
+    setBusy(true);
+
+    try {
+      await surveyResultCollection.add({
+        "data": form.value,
+        'submitted_by': FirebaseAuth.instance.currentUser?.uid,
+        'submitted_on': DateTime.now().millisecondsSinceEpoch,
+        'family': familyId,
+        'member': memberId,
+        'survey': surveyId,
+      });
+      setBusy(false);
+      _snackbarService.showCustomSnackBar(
+        message: "Survey submitted successfully",
+        variant: SnackbarType.success,
+      );
+      _navigationService.back();
+    } catch (e) {
+      setBusy(false);
+      _snackbarService.showCustomSnackBar(
+        message: "Could not add survey. Please try again after some time",
+        variant: SnackbarType.error,
+      );
+    }
+
+    setBusy(false);
   }
 }
