@@ -44,7 +44,7 @@ class SurveyView extends StatelessWidget {
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Text(
-                                              section.name,
+                                              section.label,
                                               style: const TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
@@ -142,7 +142,6 @@ class SurveySummaryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(memberId);
     return Column(
       children: [
         Padding(

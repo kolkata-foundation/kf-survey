@@ -75,6 +75,10 @@ class ImageFixedSurveyField extends SurveyField {
       _$ImageFixedSurveyFieldFromJson(json);
   @override
   Map<String, Object?> toJson() => _$ImageFixedSurveyFieldToJson(this);
+  @override
+  Widget toWidget(String controlName) {
+    return Center(child: Image.network(source));
+  }
 }
 
 @JsonSerializable()

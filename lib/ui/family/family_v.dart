@@ -66,10 +66,10 @@ class FamilyView extends StatelessWidget {
                           ),
                     ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text("Recent Surveys"),
-                  ),
+                  // const Padding(
+                  //   padding: EdgeInsets.all(8.0),
+                  //   child: Text("Recent Surveys"),
+                  // ),
                   // Column(
                   //   children: [
                   //     Padding(
