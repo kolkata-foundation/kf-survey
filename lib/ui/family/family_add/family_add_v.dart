@@ -195,7 +195,7 @@ class AddMemberCard extends StatelessWidget {
                 formControl: form.control('name') as FormControl<String>,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  label: Text("Name"),
+                  label: Text("First Name"),
                 ),
               ),
             ),

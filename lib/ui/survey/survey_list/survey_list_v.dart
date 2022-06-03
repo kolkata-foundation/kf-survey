@@ -17,10 +17,6 @@ class SurveyListView extends StatelessWidget {
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(title: const Text("Select survey")),
         body: ListView(children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text("Select a survey"),
-          ),
           ...model.surveys.entries
               .map(
                 (e) => (e.value.active)
@@ -29,6 +25,8 @@ class SurveyListView extends StatelessWidget {
                         child: ListTile(
                           title: Text(e.value.name),
                           onTap: () => model.surveySelected(e.key),
+                          tileColor: Colors.teal.shade100,
+                          trailing: Icon(Icons.arrow_right),
                         ),
                       )
                     : Container(),

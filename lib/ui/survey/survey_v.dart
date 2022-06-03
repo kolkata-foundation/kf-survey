@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kf_survey/models/family.dart';
 import 'package:kf_survey/models/survey.dart';
-import 'package:kf_survey/models/survey_field.dart';
 import 'package:kf_survey/util/commons.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:stacked/stacked.dart';
@@ -48,6 +47,7 @@ class SurveyView extends StatelessWidget {
                                               style: const TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
+                                                color: Colors.teal,
                                               ),
                                             ),
                                           ),
