@@ -93,7 +93,6 @@ class FamilyAddView extends StatelessWidget {
                                         )
                                         .toList(),
                                   ],
-                                  onChanged: model.onSubDivisionChange,
                                 ),
                               ),
                               Padding(

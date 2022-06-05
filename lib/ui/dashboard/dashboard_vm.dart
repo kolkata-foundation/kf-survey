@@ -14,9 +14,13 @@ class DashboardViewModel extends BaseViewModel {
     _navigationService.navigateTo(Routes.familyAddView);
   }
 
-  void onFindFamilyTap() {}
+  void onFindFamilyTap() {
+    _navigationService.navigateTo(Routes.searchView);
+  }
 
-  void onFindPersonTap() {}
+  void onFindPersonTap() {
+    _navigationService.navigateTo(Routes.searchView);
+  }
 
   void onFamilyTap(String id) {
     _navigationService.navigateTo(Routes.familyView,
