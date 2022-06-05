@@ -14,6 +14,7 @@ class SearchViewModel extends BaseViewModel {
   List<Subdivision> subdivisions = [];
   List<String> blocks = [];
   List<DocumentSnapshot<Family>> families = [];
+  List<MemberDoc> members = [];
   String selectedFamilyId = '';
   FormGroup form = fb.group({
     'district': [''],
@@ -57,6 +58,12 @@ class SearchViewModel extends BaseViewModel {
             )
             .get())
         .docs;
+
+    members = [];
+    for (var doc in families.where((element) => element.data() != null)) {
+      members.addAll(
+          doc.data()!.members.map((member) => MemberDoc(member, doc.id)));
+    }
     setBusy(false);
   }
 
@@ -67,10 +74,24 @@ class SearchViewModel extends BaseViewModel {
     }
   }
 
+  void onMemberSelected(MemberDoc? memberDoc) {
+    if (memberDoc != null) {
+      selectedFamilyId = memberDoc.familyId;
+      notifyListeners();
+    }
+  }
+
   onSubmit() {
     _navigationService.replaceWith(
       Routes.familyView,
       arguments: FamilyViewArguments(familyId: selectedFamilyId),
     );
   }
+}
+
+class MemberDoc {
+  final Member member;
+  final String familyId;
+
+  MemberDoc(this.member, this.familyId);
 }

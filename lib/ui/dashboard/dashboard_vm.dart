@@ -15,11 +15,17 @@ class DashboardViewModel extends BaseViewModel {
   }
 
   void onFindFamilyTap() {
-    _navigationService.navigateTo(Routes.searchView);
+    _navigationService.navigateTo(
+      Routes.searchView,
+      arguments: SearchViewArguments(isFamilySearch: true),
+    );
   }
 
   void onFindPersonTap() {
-    _navigationService.navigateTo(Routes.searchView);
+    _navigationService.navigateTo(
+      Routes.searchView,
+      arguments: SearchViewArguments(isFamilySearch: false),
+    );
   }
 
   void onFamilyTap(String id) {

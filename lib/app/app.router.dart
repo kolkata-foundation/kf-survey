@@ -101,8 +101,14 @@ class StackedRouter extends RouterBase {
       );
     },
     SearchView: (data) {
+      var args = data.getArgs<SearchViewArguments>(
+        orElse: () => SearchViewArguments(),
+      );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const SearchView(),
+        builder: (context) => SearchView(
+          key: args.key,
+          isFamilySearch: args.isFamilySearch,
+        ),
         settings: data,
       );
     },
@@ -159,6 +165,13 @@ class FamilyViewArguments {
   final String familyId;
   final Key? key;
   FamilyViewArguments({required this.familyId, this.key});
+}
+
+/// SearchView arguments holder class
+class SearchViewArguments {
+  final Key? key;
+  final bool isFamilySearch;
+  SearchViewArguments({this.key, this.isFamilySearch = true});
 }
 
 /// SurveyListView arguments holder class
