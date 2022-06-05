@@ -93,7 +93,6 @@ class SearchView extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: DropdownSearch<DocumentSnapshot<Family>>(
                           asyncItems: (filter) async {
-                            print(filter);
                             return model.families
                                 .where((element) {
                                   Family? family = element.data();
@@ -106,10 +105,13 @@ class SearchView extends StatelessWidget {
                                   // If any substring matches
                                   for (var filterSubstr in filter.split(' ')) {
                                     if (family.last_name
-                                        .contains(filterSubstr)) {
+                                        .toLowerCase()
+                                        .contains(filterSubstr.toLowerCase())) {
                                       return true;
                                     }
-                                    if (family.phone.contains(filterSubstr)) {
+                                    if (family.phone
+                                        .toLowerCase()
+                                        .contains(filterSubstr.toLowerCase())) {
                                       return true;
                                     }
                                   }
@@ -157,11 +159,13 @@ class SearchView extends StatelessWidget {
                               // If any substring matches
                               for (var filterSubstr in filter.split(' ')) {
                                 if (memberdoc.member.name
-                                    .contains(filterSubstr)) {
+                                    .toLowerCase()
+                                    .contains(filterSubstr.toLowerCase())) {
                                   return true;
                                 }
                                 if (memberdoc.member.phone
-                                    .contains(filterSubstr)) {
+                                    .toLowerCase()
+                                    .contains(filterSubstr.toLowerCase())) {
                                   return true;
                                 }
                               }
