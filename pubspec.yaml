@@ -34,15 +34,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  firebase_core: ^1.17.0
+  firebase_core: ^2.4.1
   flutterfire_ui: ^0.4.1
-  firebase_auth: ^3.3.18
-  stacked: ^2.3.6
-  stacked_services: ^0.8.22+1
-  cloud_firestore: ^3.1.15
-  reactive_forms: ^13.0.0
+  firebase_auth: ^4.2.5
+  stacked: ^3.1.0+1
+  stacked_services: ^0.9.9
+  cloud_firestore: ^4.3.1
+  reactive_forms: ^14.1.0
   uuid: ^3.0.6
-  dropdown_search: ^4.0.1
+  dropdown_search: ^5.0.5
 
 dev_dependencies:
   flutter_test:
@@ -55,7 +55,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   build_runner: ^2.1.11
-  stacked_generator: ^0.6.2
+  stacked_generator: ^0.8.3
   json_serializable: ^6.2.0
   json_annotation: ^4.5.0
 

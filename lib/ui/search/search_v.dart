@@ -138,9 +138,11 @@ class SearchView extends StatelessWidget {
                               );
                             },
                           ),
-                          dropdownSearchDecoration: const InputDecoration(
-                            label: Text("Search"),
-                            border: OutlineInputBorder(),
+                          dropdownDecoratorProps: const DropDownDecoratorProps(
+                            dropdownSearchDecoration: InputDecoration(
+                              label: Text("Search"),
+                              border: OutlineInputBorder(),
+                            ),
                           ),
                           itemAsString: (document) =>
                               document.data()!.last_name,
@@ -189,9 +191,11 @@ class SearchView extends StatelessWidget {
                               );
                             },
                           ),
-                          dropdownSearchDecoration: const InputDecoration(
-                            label: Text("Search"),
-                            border: OutlineInputBorder(),
+                          dropdownDecoratorProps: const DropDownDecoratorProps(
+                            dropdownSearchDecoration: InputDecoration(
+                              label: Text("Search"),
+                              border: OutlineInputBorder(),
+                            ),
                           ),
                           itemAsString: (memberdoc) => memberdoc.member.name,
                           onChanged: model.onMemberSelected,
