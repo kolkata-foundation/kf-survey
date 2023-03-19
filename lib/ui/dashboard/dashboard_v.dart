@@ -1,5 +1,5 @@
+import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterfire_ui/firestore.dart';
 import 'package:kf_survey/util/colors.dart';
 import 'package:kf_survey/util/firebase_refs.dart';
 import 'package:stacked/stacked.dart';

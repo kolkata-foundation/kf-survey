@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// StackedRouterGenerator
+// StackedNavigatorGenerator
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
@@ -93,76 +93,85 @@ class StackedRouter extends _i1.RouterBase {
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i3.AppLoginView: (data) {
       final args = data.getArgs<AppLoginViewArguments>(
         orElse: () => const AppLoginViewArguments(),
       );
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.AppLoginView(key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i4.AppProfileView: (data) {
       final args = data.getArgs<AppProfileViewArguments>(
         orElse: () => const AppProfileViewArguments(),
       );
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i4.AppProfileView(key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i5.DashboardView: (data) {
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.DashboardView(),
         settings: data,
+        maintainState: false,
       );
     },
     _i6.FamilyView: (data) {
       final args = data.getArgs<FamilyViewArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i6.FamilyView(familyId: args.familyId, key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i7.SearchView: (data) {
       final args = data.getArgs<SearchViewArguments>(
         orElse: () => const SearchViewArguments(),
       );
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i7.SearchView(key: args.key, isFamilySearch: args.isFamilySearch),
         settings: data,
+        maintainState: false,
       );
     },
     _i8.SurveyListView: (data) {
       final args = data.getArgs<SurveyListViewArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i8.SurveyListView(
             familyId: args.familyId, memberId: args.memberId, key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i9.SurveyView: (data) {
       final args = data.getArgs<SurveyViewArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.SurveyView(
             surveyId: args.surveyId,
             familyId: args.familyId,
             memberId: args.memberId,
             key: args.key),
         settings: data,
+        maintainState: false,
       );
     },
     _i10.FamilyAddView: (data) {
-      return MaterialPageRoute<dynamic>(
+      return _i11.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.FamilyAddView(),
         settings: data,
+        maintainState: false,
       );
     },
   };
@@ -177,12 +186,22 @@ class AppLoginViewArguments {
   const AppLoginViewArguments({this.key});
 
   final _i11.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
 }
 
 class AppProfileViewArguments {
   const AppProfileViewArguments({this.key});
 
   final _i11.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
 }
 
 class FamilyViewArguments {
@@ -194,6 +213,11 @@ class FamilyViewArguments {
   final String familyId;
 
   final _i11.Key? key;
+
+  @override
+  String toString() {
+    return '{"familyId": "$familyId", "key": "$key"}';
+  }
 }
 
 class SearchViewArguments {
@@ -205,6 +229,11 @@ class SearchViewArguments {
   final _i11.Key? key;
 
   final bool isFamilySearch;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "isFamilySearch": "$isFamilySearch"}';
+  }
 }
 
 class SurveyListViewArguments {
@@ -219,6 +248,11 @@ class SurveyListViewArguments {
   final String memberId;
 
   final _i11.Key? key;
+
+  @override
+  String toString() {
+    return '{"familyId": "$familyId", "memberId": "$memberId", "key": "$key"}';
+  }
 }
 
 class SurveyViewArguments {
@@ -236,6 +270,11 @@ class SurveyViewArguments {
   final String memberId;
 
   final _i11.Key? key;
+
+  @override
+  String toString() {
+    return '{"surveyId": "$surveyId", "familyId": "$familyId", "memberId": "$memberId", "key": "$key"}';
+  }
 }
 
 extension NavigatorStateExtension on _i12.NavigationService {
