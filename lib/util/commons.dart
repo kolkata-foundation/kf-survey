@@ -33,7 +33,7 @@ List<String> genders = ["Male", "Female", "Others"];
 
 FormGroup surveyToFormGroup(Survey survey) {
   return fb.group({
-    for (var section in survey!.sections)
+    for (var section in survey.sections)
       section.name: fb.group(
         // TODO: Add filtering based on active
         Map.fromEntries(section.survey_fields

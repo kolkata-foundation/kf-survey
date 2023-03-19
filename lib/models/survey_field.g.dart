@@ -24,8 +24,8 @@ TextFixedSurveyField _$TextFixedSurveyFieldFromJson(
     TextFixedSurveyField(
       name: json['name'] as String,
       active: json['active'] as bool,
-      display_text: json['display_text'] as String,
-      font_size: json['font_size'] as int? ?? 16,
+      displayText: json['displayText'] as String,
+      fontSize: json['fontSize'] as int? ?? 16,
     )..type = json['type'] as String;
 
 Map<String, dynamic> _$TextFixedSurveyFieldToJson(
@@ -34,8 +34,8 @@ Map<String, dynamic> _$TextFixedSurveyFieldToJson(
       'active': instance.active,
       'type': instance.type,
       'name': instance.name,
-      'display_text': instance.display_text,
-      'font_size': instance.font_size,
+      'displayText': instance.displayText,
+      'fontSize': instance.fontSize,
     };
 
 ImageFixedSurveyField _$ImageFixedSurveyFieldFromJson(
@@ -61,7 +61,7 @@ TextInputSurveyField _$TextInputSurveyFieldFromJson(
       name: json['name'] as String,
       active: json['active'] as bool,
       label: json['label'] as String,
-      max_size: json['max_size'] as int?,
+      maxSize: json['maxSize'] as int?,
     )..type = json['type'] as String;
 
 Map<String, dynamic> _$TextInputSurveyFieldToJson(
@@ -71,7 +71,7 @@ Map<String, dynamic> _$TextInputSurveyFieldToJson(
       'type': instance.type,
       'name': instance.name,
       'label': instance.label,
-      'max_size': instance.max_size,
+      'maxSize': instance.maxSize,
     };
 
 ToggleSurveyField _$ToggleSurveyFieldFromJson(Map<String, dynamic> json) =>
@@ -98,6 +98,22 @@ CheckboxSurveyField _$CheckboxSurveyFieldFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$CheckboxSurveyFieldToJson(
         CheckboxSurveyField instance) =>
+    <String, dynamic>{
+      'active': instance.active,
+      'type': instance.type,
+      'name': instance.name,
+      'label': instance.label,
+    };
+
+FiveStarSurveyField _$FiveStarSurveyFieldFromJson(Map<String, dynamic> json) =>
+    FiveStarSurveyField(
+      name: json['name'] as String,
+      active: json['active'] as bool,
+      label: json['label'] as String,
+    )..type = json['type'] as String;
+
+Map<String, dynamic> _$FiveStarSurveyFieldToJson(
+        FiveStarSurveyField instance) =>
     <String, dynamic>{
       'active': instance.active,
       'type': instance.type,

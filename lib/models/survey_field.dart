@@ -27,19 +27,15 @@ class SurveyField {
 
 @JsonSerializable()
 class TextFixedSurveyField extends SurveyField {
-  final String display_text;
-  final int font_size;
+  final String displayText;
+  final int fontSize;
 
   TextFixedSurveyField({
-    required String name,
-    required bool active,
-    required this.display_text,
-    this.font_size = 16,
-  }) : super(
-          active: active,
-          type: "text_fixed",
-          name: name,
-        );
+    required super.name,
+    required super.active,
+    required this.displayText,
+    this.fontSize = 16,
+  }) : super(type: "text_fixed");
 
   factory TextFixedSurveyField.fromJson(Map<String, Object?> json) =>
       _$TextFixedSurveyFieldFromJson(json);
@@ -49,9 +45,9 @@ class TextFixedSurveyField extends SurveyField {
   @override
   Widget toWidget(String controlName) {
     return Text(
-      display_text,
+      displayText,
       style: TextStyle(
-        fontSize: font_size.toDouble(),
+        fontSize: fontSize.toDouble(),
       ),
     );
   }
@@ -84,18 +80,14 @@ class ImageFixedSurveyField extends SurveyField {
 @JsonSerializable()
 class TextInputSurveyField extends SurveyField {
   final String label;
-  final int? max_size;
+  final int? maxSize;
 
   TextInputSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
-    this.max_size,
-  }) : super(
-          active: active,
-          type: "text_input",
-          name: name,
-        );
+    this.maxSize,
+  }) : super(type: "text_input");
 
   factory TextInputSurveyField.fromJson(Map<String, Object?> json) =>
       _$TextInputSurveyFieldFromJson(json);
@@ -118,14 +110,10 @@ class ToggleSurveyField extends SurveyField {
   final String label;
 
   ToggleSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
-  }) : super(
-          active: active,
-          type: "toggle_input",
-          name: name,
-        );
+  }) : super(type: "toggle_input");
 
   factory ToggleSurveyField.fromJson(Map<String, Object?> json) =>
       _$ToggleSurveyFieldFromJson(json);
@@ -145,19 +133,41 @@ class CheckboxSurveyField extends SurveyField {
   final String label;
 
   CheckboxSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
-  }) : super(
-          active: active,
-          type: "checkbox",
-          name: name,
-        );
+  }) : super(type: "checkbox");
 
   factory CheckboxSurveyField.fromJson(Map<String, Object?> json) =>
       _$CheckboxSurveyFieldFromJson(json);
   @override
   Map<String, Object?> toJson() => _$CheckboxSurveyFieldToJson(this);
+
+  @override
+  Widget toWidget(String controlName) {
+    return ReactiveCheckboxListTile(
+      formControlName: controlName,
+      title: Text(label),
+      controlAffinity: ListTileControlAffinity.leading,
+      dense: true,
+    );
+  }
+}
+
+@JsonSerializable()
+class FiveStarSurveyField extends SurveyField {
+  final String label;
+  int value = 0;
+  FiveStarSurveyField({
+    required super.name,
+    required super.active,
+    required this.label,
+  }) : super(type: "fivestar");
+
+  factory FiveStarSurveyField.fromJson(Map<String, Object?> json) =>
+      _$FiveStarSurveyFieldFromJson(json);
+  @override
+  Map<String, Object?> toJson() => _$FiveStarSurveyFieldToJson(this);
 
   @override
   Widget toWidget(String controlName) {

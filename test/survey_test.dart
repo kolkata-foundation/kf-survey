@@ -17,7 +17,7 @@ void main() {
           TextFixedSurveyField(
               name: "text_fixed_1",
               active: true,
-              display_text: "Hello world!!!!"),
+              displayText: "Hello world!!!!"),
           ImageFixedSurveyField(
               name: "image_1",
               active: true,
