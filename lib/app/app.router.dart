@@ -4,32 +4,40 @@
 // StackedRouterGenerator
 // **************************************************************************
 
-// ignore_for_file: public_member_api_docs
-
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:flutter/material.dart' as _i11;
 import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
-import 'package:stacked/stacked_annotations.dart';
-
-import '../ui/auth/login.dart';
-import '../ui/auth/profile.dart';
-import '../ui/dashboard/dashboard_v.dart';
-import '../ui/family/family_add/family_add_v.dart';
-import '../ui/family/family_v.dart';
-import '../ui/search/search_v.dart';
-import '../ui/splash/splash_v.dart';
-import '../ui/survey/survey_list/survey_list_v.dart';
-import '../ui/survey/survey_v.dart';
+import 'package:kf_survey/ui/auth/login.dart' as _i3;
+import 'package:kf_survey/ui/auth/profile.dart' as _i4;
+import 'package:kf_survey/ui/dashboard/dashboard_v.dart' as _i5;
+import 'package:kf_survey/ui/family/family_add/family_add_v.dart' as _i10;
+import 'package:kf_survey/ui/family/family_v.dart' as _i6;
+import 'package:kf_survey/ui/search/search_v.dart' as _i7;
+import 'package:kf_survey/ui/splash/splash_v.dart' as _i2;
+import 'package:kf_survey/ui/survey/survey_list/survey_list_v.dart' as _i8;
+import 'package:kf_survey/ui/survey/survey_v.dart' as _i9;
+import 'package:stacked/stacked.dart' as _i1;
+import 'package:stacked_services/stacked_services.dart' as _i12;
 
 class Routes {
-  static const String splashView = '/';
-  static const String appLoginView = '/app-login-view';
-  static const String appProfileView = '/app-profile-view';
-  static const String dashboardView = '/dashboard-view';
-  static const String familyView = '/family-view';
-  static const String searchView = '/search-view';
-  static const String surveyListView = '/survey-list-view';
-  static const String surveyView = '/survey-view';
-  static const String familyAddView = '/family-add-view';
+  static const splashView = '/';
+
+  static const appLoginView = '/app-login-view';
+
+  static const appProfileView = '/app-profile-view';
+
+  static const dashboardView = '/dashboard-view';
+
+  static const familyView = '/family-view';
+
+  static const searchView = '/search-view';
+
+  static const surveyListView = '/survey-list-view';
+
+  static const surveyView = '/survey-view';
+
+  static const familyAddView = '/family-add-view';
+
   static const all = <String>{
     splashView,
     appLoginView,
@@ -43,155 +51,493 @@ class Routes {
   };
 }
 
-class StackedRouter extends RouterBase {
-  @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.splashView, page: SplashView),
-    RouteDef(Routes.appLoginView, page: AppLoginView),
-    RouteDef(Routes.appProfileView, page: AppProfileView),
-    RouteDef(Routes.dashboardView, page: DashboardView),
-    RouteDef(Routes.familyView, page: FamilyView),
-    RouteDef(Routes.searchView, page: SearchView),
-    RouteDef(Routes.surveyListView, page: SurveyListView),
-    RouteDef(Routes.surveyView, page: SurveyView),
-    RouteDef(Routes.familyAddView, page: FamilyAddView),
+class StackedRouter extends _i1.RouterBase {
+  final _routes = <_i1.RouteDef>[
+    _i1.RouteDef(
+      Routes.splashView,
+      page: _i2.SplashView,
+    ),
+    _i1.RouteDef(
+      Routes.appLoginView,
+      page: _i3.AppLoginView,
+    ),
+    _i1.RouteDef(
+      Routes.appProfileView,
+      page: _i4.AppProfileView,
+    ),
+    _i1.RouteDef(
+      Routes.dashboardView,
+      page: _i5.DashboardView,
+    ),
+    _i1.RouteDef(
+      Routes.familyView,
+      page: _i6.FamilyView,
+    ),
+    _i1.RouteDef(
+      Routes.searchView,
+      page: _i7.SearchView,
+    ),
+    _i1.RouteDef(
+      Routes.surveyListView,
+      page: _i8.SurveyListView,
+    ),
+    _i1.RouteDef(
+      Routes.surveyView,
+      page: _i9.SurveyView,
+    ),
+    _i1.RouteDef(
+      Routes.familyAddView,
+      page: _i10.FamilyAddView,
+    ),
   ];
-  @override
-  Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, StackedRouteFactory>{
-    SplashView: (data) {
+
+  final _pagesMap = <Type, _i1.StackedRouteFactory>{
+    _i2.SplashView: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const SplashView(),
+        builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
-    AppLoginView: (data) {
-      var args = data.getArgs<AppLoginViewArguments>(
-        orElse: () => AppLoginViewArguments(),
+    _i3.AppLoginView: (data) {
+      final args = data.getArgs<AppLoginViewArguments>(
+        orElse: () => const AppLoginViewArguments(),
       );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => AppLoginView(key: args.key),
+        builder: (context) => _i3.AppLoginView(key: args.key),
         settings: data,
       );
     },
-    AppProfileView: (data) {
-      var args = data.getArgs<AppProfileViewArguments>(
-        orElse: () => AppProfileViewArguments(),
+    _i4.AppProfileView: (data) {
+      final args = data.getArgs<AppProfileViewArguments>(
+        orElse: () => const AppProfileViewArguments(),
       );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => AppProfileView(key: args.key),
+        builder: (context) => _i4.AppProfileView(key: args.key),
         settings: data,
       );
     },
-    DashboardView: (data) {
+    _i5.DashboardView: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const DashboardView(),
+        builder: (context) => const _i5.DashboardView(),
         settings: data,
       );
     },
-    FamilyView: (data) {
-      var args = data.getArgs<FamilyViewArguments>(nullOk: false);
+    _i6.FamilyView: (data) {
+      final args = data.getArgs<FamilyViewArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => FamilyView(
-          familyId: args.familyId,
-          key: args.key,
-        ),
+        builder: (context) =>
+            _i6.FamilyView(familyId: args.familyId, key: args.key),
         settings: data,
       );
     },
-    SearchView: (data) {
-      var args = data.getArgs<SearchViewArguments>(
-        orElse: () => SearchViewArguments(),
+    _i7.SearchView: (data) {
+      final args = data.getArgs<SearchViewArguments>(
+        orElse: () => const SearchViewArguments(),
       );
       return MaterialPageRoute<dynamic>(
-        builder: (context) => SearchView(
-          key: args.key,
-          isFamilySearch: args.isFamilySearch,
-        ),
+        builder: (context) =>
+            _i7.SearchView(key: args.key, isFamilySearch: args.isFamilySearch),
         settings: data,
       );
     },
-    SurveyListView: (data) {
-      var args = data.getArgs<SurveyListViewArguments>(nullOk: false);
+    _i8.SurveyListView: (data) {
+      final args = data.getArgs<SurveyListViewArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => SurveyListView(
-          familyId: args.familyId,
-          memberId: args.memberId,
-          key: args.key,
-        ),
+        builder: (context) => _i8.SurveyListView(
+            familyId: args.familyId, memberId: args.memberId, key: args.key),
         settings: data,
       );
     },
-    SurveyView: (data) {
-      var args = data.getArgs<SurveyViewArguments>(nullOk: false);
+    _i9.SurveyView: (data) {
+      final args = data.getArgs<SurveyViewArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => SurveyView(
-          surveyId: args.surveyId,
-          familyId: args.familyId,
-          memberId: args.memberId,
-          key: args.key,
-        ),
+        builder: (context) => _i9.SurveyView(
+            surveyId: args.surveyId,
+            familyId: args.familyId,
+            memberId: args.memberId,
+            key: args.key),
         settings: data,
       );
     },
-    FamilyAddView: (data) {
+    _i10.FamilyAddView: (data) {
       return MaterialPageRoute<dynamic>(
-        builder: (context) => const FamilyAddView(),
+        builder: (context) => const _i10.FamilyAddView(),
         settings: data,
       );
     },
   };
+
+  @override
+  List<_i1.RouteDef> get routes => _routes;
+  @override
+  Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-/// ************************************************************************
-/// Arguments holder classes
-/// *************************************************************************
-
-/// AppLoginView arguments holder class
 class AppLoginViewArguments {
-  final Key? key;
-  AppLoginViewArguments({this.key});
+  const AppLoginViewArguments({this.key});
+
+  final _i11.Key? key;
 }
 
-/// AppProfileView arguments holder class
 class AppProfileViewArguments {
-  final Key? key;
-  AppProfileViewArguments({this.key});
+  const AppProfileViewArguments({this.key});
+
+  final _i11.Key? key;
 }
 
-/// FamilyView arguments holder class
 class FamilyViewArguments {
+  const FamilyViewArguments({
+    required this.familyId,
+    this.key,
+  });
+
   final String familyId;
-  final Key? key;
-  FamilyViewArguments({required this.familyId, this.key});
+
+  final _i11.Key? key;
 }
 
-/// SearchView arguments holder class
 class SearchViewArguments {
-  final Key? key;
+  const SearchViewArguments({
+    this.key,
+    this.isFamilySearch = true,
+  });
+
+  final _i11.Key? key;
+
   final bool isFamilySearch;
-  SearchViewArguments({this.key, this.isFamilySearch = true});
 }
 
-/// SurveyListView arguments holder class
 class SurveyListViewArguments {
+  const SurveyListViewArguments({
+    required this.familyId,
+    required this.memberId,
+    this.key,
+  });
+
   final String familyId;
+
   final String memberId;
-  final Key? key;
-  SurveyListViewArguments(
-      {required this.familyId, required this.memberId, this.key});
+
+  final _i11.Key? key;
 }
 
-/// SurveyView arguments holder class
 class SurveyViewArguments {
+  const SurveyViewArguments({
+    required this.surveyId,
+    required this.familyId,
+    required this.memberId,
+    this.key,
+  });
+
   final String surveyId;
+
   final String familyId;
+
   final String memberId;
-  final Key? key;
-  SurveyViewArguments(
-      {required this.surveyId,
-      required this.familyId,
-      required this.memberId,
-      this.key});
+
+  final _i11.Key? key;
+}
+
+extension NavigatorStateExtension on _i12.NavigationService {
+  Future<dynamic> navigateToSplashView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.splashView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToAppLoginView({
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.appLoginView,
+        arguments: AppLoginViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToAppProfileView({
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.appProfileView,
+        arguments: AppProfileViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToDashboardView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.dashboardView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToFamilyView({
+    required String familyId,
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.familyView,
+        arguments: FamilyViewArguments(familyId: familyId, key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSearchView({
+    _i11.Key? key,
+    bool isFamilySearch = true,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.searchView,
+        arguments:
+            SearchViewArguments(key: key, isFamilySearch: isFamilySearch),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSurveyListView({
+    required String familyId,
+    required String memberId,
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.surveyListView,
+        arguments: SurveyListViewArguments(
+            familyId: familyId, memberId: memberId, key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSurveyView({
+    required String surveyId,
+    required String familyId,
+    required String memberId,
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.surveyView,
+        arguments: SurveyViewArguments(
+            surveyId: surveyId,
+            familyId: familyId,
+            memberId: memberId,
+            key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToFamilyAddView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.familyAddView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSplashView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.splashView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAppLoginView({
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.appLoginView,
+        arguments: AppLoginViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAppProfileView({
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.appProfileView,
+        arguments: AppProfileViewArguments(key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithDashboardView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.dashboardView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithFamilyView({
+    required String familyId,
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.familyView,
+        arguments: FamilyViewArguments(familyId: familyId, key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSearchView({
+    _i11.Key? key,
+    bool isFamilySearch = true,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.searchView,
+        arguments:
+            SearchViewArguments(key: key, isFamilySearch: isFamilySearch),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSurveyListView({
+    required String familyId,
+    required String memberId,
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.surveyListView,
+        arguments: SurveyListViewArguments(
+            familyId: familyId, memberId: memberId, key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSurveyView({
+    required String surveyId,
+    required String familyId,
+    required String memberId,
+    _i11.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.surveyView,
+        arguments: SurveyViewArguments(
+            surveyId: surveyId,
+            familyId: familyId,
+            memberId: memberId,
+            key: key),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithFamilyAddView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.familyAddView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
 }
