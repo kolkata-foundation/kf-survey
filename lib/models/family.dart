@@ -32,7 +32,7 @@ class Family {
 class Member {
   final String name;
   final int age;
-  final String phone;
+  final String? phone;
   final String member_id;
   final String gender;
 

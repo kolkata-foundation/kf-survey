@@ -1,10 +1,8 @@
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterfire_ui/auth.dart';
-import 'package:kf_survey/app/app.router.dart';
-import 'package:kf_survey/ui/splash/splash_v.dart';
-import 'package:stacked_services/stacked_services.dart';
-
 import 'package:kf_survey/app/app.locator.dart';
+import 'package:kf_survey/app/app.router.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class AppProfileView extends StatelessWidget {
   AppProfileView({Key? key}) : super(key: key);

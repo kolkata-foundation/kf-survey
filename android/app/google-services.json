@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "667429940688-6gp773q6pbfocvjivd6obsq0er5qv8og.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kf_survey",
+            "certificate_hash": "36e28a27e6f84a8baf3531334ed30ccc3555f457"
+          }
+        },
+        {
+          "client_id": "667429940688-equ3ipdvdoaiia13he0aea6qaajm5tfg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kf_survey",
+            "certificate_hash": "cb8f75b03e76b6101f959b6352e5e7e04f295fbc"
+          }
+        },
+        {
           "client_id": "667429940688-su6e8kc9mj11d984qgbv6q1nnjcaehrs.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -30,6 +46,13 @@
             {
               "client_id": "667429940688-su6e8kc9mj11d984qgbv6q1nnjcaehrs.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "667429940688-5lpnfvjo5cjmef66ffiovtqjj6s0gov9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kfSurvey"
+              }
             }
           ]
         }
