@@ -166,8 +166,9 @@ class SearchView extends StatelessWidget {
                                   return true;
                                 }
                                 if (memberdoc.member.phone
-                                    .toLowerCase()
-                                    .contains(filterSubstr.toLowerCase())) {
+                                        ?.toLowerCase()
+                                        .contains(filterSubstr.toLowerCase()) ??
+                                    false) {
                                   return true;
                                 }
                               }
@@ -184,7 +185,7 @@ class SearchView extends StatelessWidget {
                               final Member member = memberdoc.member;
                               return ListTile(
                                 title: Text(member.name),
-                                subtitle: Text(member.phone),
+                                subtitle: Text(member.phone ?? ""),
                                 trailing:
                                     Text("${member.gender} ${member.age}"),
                                 leading: const Icon(Icons.person),

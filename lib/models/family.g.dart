@@ -35,7 +35,7 @@ Map<String, dynamic> _$FamilyToJson(Family instance) => <String, dynamic>{
 Member _$MemberFromJson(Map<String, dynamic> json) => Member(
       name: json['name'] as String,
       age: json['age'] as int,
-      phone: json['phone'] as String,
+      phone: json['phone'] as String?,
       gender: json['gender'] as String,
       member_id: json['member_id'] as String,
     );

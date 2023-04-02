@@ -32,26 +32,26 @@ class SearchViewModel extends BaseViewModel {
     setBusy(false);
   }
 
-  onDistrictChange(districtName) {
+  onDistrictChange(FormControl<String> districtName) {
+    print(districts.map((d) => d.name));
     subdivisions = districts
-        .where((element) => element.name == districtName)
-        .first
+        .firstWhere((element) => element.name == districtName.value)
         .subdivisions;
     notifyListeners();
   }
 
-  onSubDivisionChange(subDivisionName) {
+  onSubDivisionChange(FormControl<String> subDivisionName) {
     blocks = subdivisions
-        .where((element) => element.name == subDivisionName)
+        .where((element) => element.name == subDivisionName.value)
         .first
         .blocks;
     notifyListeners();
   }
 
-  onBlockChange(block) async {
+  onBlockChange(FormControl<String> block) async {
     setBusy(true);
     families = (await familyCollection
-            .where('block', isEqualTo: block)
+            .where('block', isEqualTo: block.value)
             .withConverter<Family>(
               fromFirestore: (snapshot, _) => Family.fromJson(snapshot.data()!),
               toFirestore: (family, _) => family.toJson(),
