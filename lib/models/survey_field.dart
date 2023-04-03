@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:reactive_flutter_rating_bar/reactive_flutter_rating_bar.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 part 'survey_field.g.dart';
@@ -166,6 +167,41 @@ class CheckboxSurveyField extends SurveyField {
       title: Text(label),
       controlAffinity: ListTileControlAffinity.leading,
       dense: true,
+    );
+  }
+}
+
+@JsonSerializable()
+class RatingSurveyField extends SurveyField {
+  final String label;
+
+  RatingSurveyField({
+    required String name,
+    required bool active,
+    required this.label,
+  }) : super(
+          active: active,
+          type: "rating",
+          name: name,
+        );
+
+  factory RatingSurveyField.fromJson(Map<String, Object?> json) =>
+      _$RatingSurveyFieldFromJson(json);
+  @override
+  Map<String, Object?> toJson() => _$RatingSurveyFieldToJson(this);
+
+  @override
+  Widget toWidget(String controlName) {
+    return ReactiveRatingBar<double>(
+      formControlName: controlName,
+      decoration: InputDecoration(
+        label: Text(label),
+        border: InputBorder.none,
+      ),
+      ratingWidget: RatingWidget(
+          empty: const Icon(Icons.star_border, color: Colors.yellow),
+          half: const Icon(Icons.star_half, color: Colors.yellow),
+          full: const Icon(Icons.star, color: Colors.yellow)),
     );
   }
 }
