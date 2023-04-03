@@ -44,6 +44,7 @@ dependencies:
   dropdown_search: ^5.0.5
   firebase_ui_auth: ^1.1.17
   firebase_ui_firestore: ^1.2.10
+  reactive_flutter_rating_bar: ^0.4.0
 
 dev_dependencies:
   flutter_test:

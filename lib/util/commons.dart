@@ -51,6 +51,8 @@ MapEntry<String, FormControl> fieldToControl(SurveyField field) {
     case "toggle":
     case "checkbox":
       return MapEntry(field.name, fb.control<bool>(false));
+    case "rating":
+      return MapEntry(field.name, fb.control<double>(5));
     case "text_fixed":
     case "image_fixed":
     case "text_input":
