@@ -1,16 +1,40 @@
 {
-    "districts": [
+  "districts": [
+    {
+      "name": "24-Parganas (South)",
+      "subdivisions": [
         {
-            "name": "24-Parganas (South)",
-            "subdivisions": [
-                {
-                    "name": "Kakdwip",
-                    "blocks": [
-                        "Sagar",
-                        "Namkhana"
-                    ]
-                }
-            ]
+          "name": "Kakdwip",
+          "blocks": [
+            "Sagar",
+            "Namkhana",
+            "Kakdwip",
+            "Patharpratima"
+          ]
+        },
+        {
+          "name": "Canning",
+          "blocks": [
+            "Canning I",
+            "Canning II",
+            "Gosaba",
+            "Basantipur"
+          ]
+        },
+        {
+          "name": "Diamond Harbour",
+          "blocks": [
+            "Diamond Harbour I",
+            "Diamond Harbour II",
+            "Falta",
+            "Kulpi",
+            "Mandirbazar",
+            "Magrahat I",
+            "Magrahat II",
+            "Mathurapur I",
+            "Mathurapur II"
         }
-    ]
+      ]
+    }
+  ]
 }
