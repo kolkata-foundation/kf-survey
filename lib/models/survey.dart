@@ -54,6 +54,8 @@ List<SurveyField> jsonToSurveyFields(List<dynamic> fields) {
         return CheckboxSurveyField.fromJson(json);
       case "rating":
         return RatingSurveyField.fromJson(json);
+      case "dropdown":
+        return DropdownSurveyField.fromJson(json);
       default:
         return SurveyField(
           name: "name",
