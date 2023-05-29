@@ -205,3 +205,42 @@ class RatingSurveyField extends SurveyField {
     );
   }
 }
+
+@JsonSerializable()
+class DropdownSurveyField extends SurveyField {
+  final String label;
+  final List<String> options;
+
+  DropdownSurveyField({
+    required String name,
+    required bool active,
+    required this.label,
+    required this.options,
+  }) : super(
+          active: active,
+          type: "dropdown",
+          name: name,
+        );
+
+  factory DropdownSurveyField.fromJson(Map<String, Object?> json) =>
+      _$DropdownSurveyFieldFromJson(json);
+  @override
+  Map<String, Object?> toJson() => _$DropdownSurveyFieldToJson(this);
+
+  @override
+  Widget toWidget(String controlName) {
+    return ReactiveDropdownField(
+      formControlName: controlName,
+      decoration: InputDecoration(
+        label: Text(label),
+        border: InputBorder.none,
+      ),
+      items: options
+          .map((option) => DropdownMenuItem(
+                value: option,
+                child: Text(option),
+              ))
+          .toList(),
+    );
+  }
+}

@@ -119,3 +119,22 @@ Map<String, dynamic> _$RatingSurveyFieldToJson(RatingSurveyField instance) =>
       'name': instance.name,
       'label': instance.label,
     };
+
+DropdownSurveyField _$DropdownSurveyFieldFromJson(Map<String, dynamic> json) =>
+    DropdownSurveyField(
+      name: json['name'] as String,
+      active: json['active'] as bool,
+      label: json['label'] as String,
+      options:
+          (json['options'] as List<dynamic>).map((e) => e as String).toList(),
+    )..type = json['type'] as String;
+
+Map<String, dynamic> _$DropdownSurveyFieldToJson(
+        DropdownSurveyField instance) =>
+    <String, dynamic>{
+      'active': instance.active,
+      'type': instance.type,
+      'name': instance.name,
+      'label': instance.label,
+      'options': instance.options,
+    };
