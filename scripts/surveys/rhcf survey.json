@@ -1,0 +1,309 @@
+{
+    "active": true,
+    "name": "RHCF Outreach",
+    "sections": [
+        {
+            "index": 0,
+            "name": "general",
+            "label": "General Questionnaire ( সাধারন প্রশ্নোত্তর)",
+            "survey_fields": [
+                {
+                    "name": "rchf_logo",
+                    "active": true,
+                    "type": "image_fixed",
+                    "source": "https://assets.letsendorse.com/20170623/DBUlGkBYbJqOEalgzxO14982027895069.jpg"
+                },
+                {
+                    "name": "illness_question",
+                    "active": true,
+                    "type": "text_fixed",
+                    "display_text": "Do you have any illness? (আপনার কোন অসুখ আছে?)"
+                },
+                {
+                    "name": "illness_bloodpressure",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Blood Pressure (রক্তচাপ)"
+                },
+                {
+                    "name": "illness_sugar",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Sugar (সুগার)"
+                },
+                {
+                    "name": "illness_cardiac",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Cardiac Disorder (হার্ট এর সমস্যা)"
+                },
+                {
+                    "name": "illness_kidney",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Kidney Disorder (কিডনি এর সমস্যা)"
+                },
+                {
+                    "name": "illness_gastric",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Gastric Irritation (গ্যাসের সমস্যা)"
+                },
+                {
+                    "name": "illness_other",
+                    "active": true,
+                    "type": "text_input",
+                    "label": "Other"
+                },
+                {
+                    "name": "surgical_history",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Surgical History ( কখনো অস্ত্রপোচার হয়েছে কিনা?)"
+                },
+                {
+                    "name": "chest_pain",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Chest Pain Issue ( বুকে ব্যাথা হয়? )"
+                },
+                {
+                    "name": "breathing",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Breathing Issue (শ্বাস কষ্টের কোন সমস্যা )"
+                },
+                {
+                    "name": "tired",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Do you get tired of doing light household chores? (গৃহস্থলির হালকা কাজ করেও কি আপনার ক্লান্তি আসে )"
+                },
+                {
+                    "name": "weight_loss",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Rapid weight loss? (ওজন দ্রুত কমে যাওয়ার মত কোন ঘটনা আছে )"
+                },
+                {
+                    "name": "bowel_question",
+                    "active": true,
+                    "type": "text_fixed",
+                    "display_text": "Bowel Disorder (পায়খানা কি রকম হয়?)"
+                },
+                {
+                    "name": "bowel_normal",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Normal (স্বাভাবিক)"
+                },
+                {
+                    "name": "bowel_constipation",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Constipation (কোষ্ঠ কাঠিন্য)"
+                },
+                {
+                    "name": "bowel_loose",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Loose motion (পাতলা)"
+                },
+                {
+                    "name": "bowel_bleeding",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Bleeding per rectum (মলদ্বার দিয়ে রক্তপাত হয় কিনা)"
+                },
+                {
+                    "name": "urine_question",
+                    "active": true,
+                    "type": "text_fixed",
+                    "display_text": "Urine Disorder (প্রস্রাবের সমস্যা)"
+                },
+                {
+                    "name": "urine_burning",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Burning (প্রসাব করার সময় জ্বালা করা)"
+                },
+                {
+                    "name": "urine_pain",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Pain (ব্যাথা হওয়া)"
+                },
+                {
+                    "name": "urine_incontinence",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Urinal Incontinence ( না ধরে রাখতে পারা)"
+                },
+                {
+                    "name": "urine_frequent",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Frequent / Polyuria ( বারে বারে হওয়া)"
+                },
+                {
+                    "name": "urine_low",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Low urine output ( কম হওয়া)"
+                },
+                {
+                    "name": "urine_normal",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Low urine output ( কম হওয়া)"
+                },
+                {
+                    "name": "sleeping_question",
+                    "active": true,
+                    "type": "text_fixed",
+                    "display_text": "Sleeping Disorder ( ঘুমের ব্যাধি)"
+                },
+                {
+                    "name": "sleeping_normal",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Normal (স্বাভাবিক)"
+                },
+                {
+                    "name": "sleeping_insomniac",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Insomniac ( অনিদ্রা)"
+                },
+                {
+                    "name": "sleeping_sweat",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "sweating during sleep (ঘুমের সময় কি ঘাম হয় ?)"
+                },
+                {
+                    "name": "pain_in_knee",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Do you have pain in the knee, waist or any other part of the body? ( হাঁটু কোমরে পিঠে বা শরীরের অন্য কোন জায়গায় ব্যাথা হয় ?)"
+                },
+                {
+                    "name": "skin_disease",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Do you have Skin disease? ( চর্ম রোগ আছে কি ?)"
+                },
+                {
+                    "name": "ear_problem",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Do you have any problem in Ears (আপনার কানে কোন সমস্যা আছে?)"
+                },
+                {
+                    "name": "dental_problem",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Do you have any Dental Problem (আপনার কি দাঁতের কোন সমস্যা আছে"
+                }
+            ]
+        },
+        {
+            "index": 1,
+            "name": "women",
+            "label": "Questionnaire For Ladies ( শুধুমাত্র মহিলাদের জন্য)",
+            "survey_fields": [
+                {
+                    "name": "period",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Any issues regarding Periods? (মহিলা সদস্যের মাসিক এর সমস্যা আছে ?)"
+                },
+                {
+                    "name": "lumps",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Any lumps is in any of your body part? (শরীরের অন্য কোন জায়গায় কি মাংস পিন্ড লক্ষ্য করেছেন কখনো ?"
+                },
+                {
+                    "name": "eyesight_reading_question",
+                    "active": true,
+                    "type": "text_fixed",
+                    "display_text": "Reading Eye sight (কাছের দৃষ্টি শক্তি)"
+                },
+                {
+                    "name": "eyesight_reading_good",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Good (ভাল)"
+                },
+                {
+                    "name": "eyesight_reading_average",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Average (সাধারন)"
+                },
+                {
+                    "name": "eyesight_reading_bad",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Bad (খুব খারাপ)"
+                },
+                {
+                    "name": "eyesight_distance_question",
+                    "active": true,
+                    "type": "text_fixed",
+                    "display_text": "Distance Eye Sight (দূরের দৃষ্টি শক্তি)"
+                },
+                {
+                    "name": "eyesight_distance_good",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Good (ভাল)"
+                },
+                {
+                    "name": "eyesight_distance_average",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Average (সাধারন)"
+                },
+                {
+                    "name": "eyesight_distance_bad",
+                    "active": true,
+                    "type": "checkbox",
+                    "label": "Bad (খুব খারাপ)"
+                },
+                {
+                    "name": "eye_disorder",
+                    "active": true,
+                    "type": "toggle",
+                    "label": "Eye Disorder ( চোখের সমস্যা)"
+                }
+            ]
+        },
+        {
+            "name": "test",
+            "index": 2,
+            "label": "Test (টেস্ট)",
+            "survey_fields": [
+                {
+                    "name": "blood_pressure",
+                    "active": true,
+                    "type": "text_input",
+                    "label": "Blood Pressure (ব্লাড প্রেসার)"
+                },
+                {
+                    "name": "spo2",
+                    "active": true,
+                    "type": "text_input",
+                    "label": "SPO2 Level (রক্তে অক্সিজেন মাত্রা)"
+                },
+                {
+                    "name": "blood pressure",
+                    "active": true,
+                    "type": "text_input",
+                    "label": "Heart Rate (হার্ট রেট)"
+                }
+            ]
+        }
+    ]
+}

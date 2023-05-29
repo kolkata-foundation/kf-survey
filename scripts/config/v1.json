@@ -1,0 +1,16 @@
+{
+    "districts": [
+        {
+            "name": "24-Parganas (South)",
+            "subdivisions": [
+                {
+                    "name": "Kakdwip",
+                    "blocks": [
+                        "Sagar",
+                        "Namkhana"
+                    ]
+                }
+            ]
+        }
+    ]
+}
