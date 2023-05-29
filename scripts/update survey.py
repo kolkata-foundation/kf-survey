@@ -11,7 +11,7 @@ parser.add_argument("--filepath", required=True)
 
 args = parser.parse_args()
 
-with open(args.filepath, "r") as file:
+with open(args.filepath, "r", encoding='utf-8') as file:
     data = json.load(file)
     filename = os.path.basename(file.name).split('.')[0]
 
