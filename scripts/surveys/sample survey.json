@@ -1,0 +1,64 @@
+{
+    "active": true,
+    "name": "Complete Sample",
+    "sections": [
+        {
+            "index": 0,
+            "name": "page1",
+            "label": "Page 1",
+            "survey_fields": [
+                {
+                    "name": "image_fixed",
+                    "type": "image_fixed",
+                    "active": true,
+                    "source": "https://images.unsplash.com/photo-1679936167452-18a6119f4006?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                },
+                {
+                    "name": "text_fixed",
+                    "type": "text_fixed",
+                    "active": true,
+                    "display_text": "Sample Fixed Text"
+                },
+                {
+                    "name": "text_input",
+                    "type": "text_input",
+                    "active": true,
+                    "label": "Text Input"
+                },
+                {
+                    "name": "toggle_input",
+                    "type": "toggle_input",
+                    "active": true,
+                    "label": "Toogle Input"
+                },
+                {
+                    "name": "checkbox",
+                    "type": "checkbox",
+                    "active": true,
+                    "label": "Checkbox Input"
+                },
+                {
+                    "name": "rating",
+                    "type": "rating",
+                    "active": true,
+                    "label": "Rating Input"
+                },
+                {
+                    "name": "dropdown",
+                    "type": "dropdown",
+                    "active": true,
+                    "label": "Dropdown Input",
+                    "options": [
+                        "Option 1",
+                        "Option 2",
+                        "Option 3",
+                        "Option 4",
+                        "Option 5",
+                        "Option 6",
+                        "Option 7"
+                    ]
+                }
+            ]
+        }
+    ]
+}
