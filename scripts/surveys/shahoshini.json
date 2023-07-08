@@ -1,0 +1,50 @@
+{
+    "active": true,
+    "name": "Shahoshini Community Survey",
+    "sections": [
+        {
+            "index": 0,
+            "name": "General Questions",
+            "label": "General Questions (সাধারন প্রশ্নোত্তর)",
+            "survey_fields": [
+              {
+                 "name": "shahoshini_name",
+                 "type": "dropdown",
+                 "active": true,
+                 "label": "Shahoshini Name ()",
+                 "options": [
+                   "Shiba Mondal",
+                   "Debjani Haldar",
+                  ]
+              },
+              {
+                 "name": "education",
+                 "type": "dropdown",
+                 "active": true,
+                 "label": "Education (শিক্ষাগত যোগ্যতা)",
+                 "options": [
+                   "Primary School",
+                   "Middle School",
+                   "High School",
+                   "College",
+                 ]
+              },
+              {
+                 "name": "employed",
+                 "type": "toggle_input",
+                 "active": true,
+                 "label": "কোন কাজে নিযুক্ত কি না ",
+              },
+              {
+                 "name": "employment_type",
+                 "type": "dropdown",
+                 "active": true,
+                 "label": "কি ধরণের কাজে নিযুক্ত,"
+                 "options": [
+
+                 ]
+              },
+            ]
+        }
+    ]
+}
