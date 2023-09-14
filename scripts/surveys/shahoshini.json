@@ -5,7 +5,7 @@
         {
             "index": 0,
             "name": "General Questions",
-            "label": "General Questions (সাধারন প্রশ্নোত্তর)",
+            "label": "সাধারন প্রশ্নোত্তর (general)",
             "survey_fields": [
               {
                  "name": "shahoshini_name",
@@ -14,37 +14,340 @@
                  "label": "Shahoshini Name ()",
                  "options": [
                    "Shiba Mondal",
-                   "Debjani Haldar",
+                   "Debjani Haldar"
                   ]
               },
               {
                  "name": "education",
                  "type": "dropdown",
                  "active": true,
-                 "label": "Education (শিক্ষাগত যোগ্যতা)",
+                 "label": "শিক্ষাগত যোগ্যতা (Education)",
                  "options": [
-                   "Primary School",
-                   "Middle School",
-                   "High School",
-                   "College",
+                   "পঞ্চম শ্রেণী অবধি(upto 5th standard) ",
+                   "ষষ্ঠ থেকে দশমের মধ্যে (6th to 10th standard)",
+                   "উচ্চমাধ্যমিক(upto higher secondary) ",
+                   " উচ্চ মাধ্যমিকের উপর(college)"
                  ]
-              },
+              }
+           ]
+        },
+        {
+            "index": 1,
+            "name": "economic_status",
+            "label": "Economic Status",
+            "survey_fields": [
               {
                  "name": "employed",
                  "type": "toggle_input",
                  "active": true,
-                 "label": "কোন কাজে নিযুক্ত কি না ",
+                 "label": "কোন কাজে নিযুক্ত কি না (do you earn)?"
               },
               {
                  "name": "employment_type",
                  "type": "dropdown",
                  "active": true,
-                 "label": "কি ধরণের কাজে নিযুক্ত,"
+                 "label": "কি ধরণের কাজে নিযুক্ত (type of work)?",
                  "options": [
-
+                  "চাষের কাজ(farming)",
+                  "বাড়িতে বসে কাজ(home based work)",
+                  "বাইরে কাজ (outside work) ",
+                  "অস্থায়ী শ্রমদানের কাজ (daily labour)"
                  ]
               },
+              {
+                  "name": "wages",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "মাসিক আয়ের পরিমান কত (monthly wages)?",
+                  "options": [
+                  "১০০০ টাকার মধ্যে (under 1000)",
+                  "১০০১-২৪০০ (1001-2400)",
+                  "২৫০১- ৪০০০ (2501-4000)",
+                  "৪০০১ এর উপরে  (more than 4001)"
+                  ]              
+              }
             ]
-        }
+        },
+        {
+            "index": 2,
+            "name": "financial_agency",
+            "label": "Financial Agency",
+            "survey_fields": [
+               {
+                  "name": "earned_money_agency",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "আয়ের টাকা কার কাছে থাকে (who keeps your earned money)?",
+                  "options": [
+                     "নিজের কাছে (yourself)",
+                     "স্বামীর কাছে (husband)",
+                     "বাপের বাড়ির লোকের কাছে (father/parents)",
+                     "শ্বশুর বাড়ির লোকের কাছে (in-laws)" 
+                  ]
+               },
+               {
+                  "name": "marital_status",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "marital status",
+                  "options": [
+                     "বিবাহিত (married)",
+                     "অবিবাহিত (unmarried)",
+                     "একাকি মহিলা (single woman)",
+                     "বিবাহ বিচ্ছিন্না (divorcee)"
+                  ]
+               },
+               {
+                  "name": "living_at",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "কোথায় থাকেন (where do you live)",
+                  "options": [
+                     "নিজের বাড়ী (own house)",
+                     "বাপের বাড়ী (father's home)",
+                     "শ্বশুরবাড়ী (in-law's home)"
+                  ]
+               },
+               {
+                  "name": "land_ownership",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "নিজের নামে চাষের জমি আছে কি না (own land)?"
+               },
+               {
+                  "name": "bank_account",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "নিজের নামে ব্যাংক আকাউন্ট আছে কিনা (bank account)?"
+               },
+               {
+                  "name": "work_type",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "সংসারের কাজের সাথে অন্য  কাজ করতে হয় কিনা (anything else besides housework)?"
+               }
+            ]
+         },
+         {
+            "index": 3,
+            "name": "decision_making_and_mobility",
+            "label": "Decision making & mobility",
+            "survey_fields": [
+               {
+                  "name": "num_children",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "বাচ্চা কত জন(how many children)",
+                  "options": [
+                     "নেই (none)",
+                     "১টি (1)",
+                     "২টি (2)",
+                     "৩টি (3)",
+                     "৪টি (4)",
+                     "৪ এর অধিক (> 4)"
+                  ]
+               },
+               {
+                  "name": "job_related_mobility",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "যদি রোজগার করার জন্য বাইরে বেরোন, বাড়ির সবাই কি মেনে নেবে (does family allow you to go outside to earn)?"
+               },
+               {
+                  "name": "FIXME: childbearing_years_after_marriage",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "বিয়ের কত বছর পর প্রথম বাচ্চা হয়ছে (conceived your first child?)",
+                  "options": [
+                     "১ বছরের মধ্যে(within 2 year after marriage)",
+                     "১-২ বছরের মধ্যে(1-2 years)",
+                     "২-৩ বছরের মধ্যে(within 2-3 years)",
+                     "৩ বছরের পরে (after 3 years or more)"
+                  ]
+               },
+               {
+                  "name": "boy_child_pressures",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "পরিবারে  ছেলে সন্তানের কোন চাহিদা ছিল? (demand for a boy child in family)?"  
+               },
+               {
+                  "name": "FIXME: age_gap between_children",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "বাচ্চাদের মধ্যে ব্যাবধান কত?(age gap of your children)",
+                  "options": [
+                     "১ বছরের কম(less than 1 year)",
+                     "দেড় বছরের মধ্যে(within 1.5 years",
+                     "২ বছরের মধ্যে (within 2 years)",
+                     "আড়াই বছরের উপরে (more than 2.5years)"
+                  ]
+               },
+               {
+                  "name": "local_police_station",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "কোনো কাজে থানায় গেছেন (visited local police station)?"  
+               },
+               {
+                  "name": "marriage_age",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "আপনার বিয়ের সময় বয়স কত ছিল (age when you got married )",
+                  "options": [
+                     "১৫-১৮(15-18 years)",
+                     "১৯-২৪ (19-24 years)",
+                     "২৫-৩০ (25-30 years)",
+                     "৩০ এর উপরে (above 30)"
+                  ]
+               },
+               {
+                  "name": "family_visit_frequency",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "বাবার বাড়ী কত ঘন ঘন যান(how often do you visit your parents home)",
+                  "options": [
+                     "মাসে একবার (once a month)",
+                     "যখন ইচ্ছা (whenever you want)",
+                     "৩-৫ মাস অন্তর (every 3-5 months)",
+                     "বছরে ২ বার (twice a years)",
+                     "যাওয়া হয়না (never)" 
+                  ]
+               },
+               {
+                  "name": "permission_to_visit_family",
+                  "type": "toggle_input",
+                  "active": true,
+                  "label": "যাওয়ার সময় অনুমতি নিতে হয় কিনা( Do you take permission before going)?"
+               },
+               {
+                  "name": "household_decision_maker",
+                  "type": "dropdown",
+                  "active": true,
+                  "label": "বাড়ীতে কোন ব্যাপারে সিদ্ধান্ত নিতে হলে কে নেন (who makes household decisions)",
+                  "options": [
+                     "নিজে (you)",
+                     "স্বামী (husband)",
+                     "স্বশুর ও স্বামী (husband + father-in-law)",
+                     "শাশুড়ি (mother-in-law)",
+                     "FIXME (father)",
+                     "FIXME (other)"
+                  ]
+               }
+            ]
+         },
+         {
+            "index": 4,
+            "name": "dowry_financial_abuse",
+            "label": "Dowry and financial abuse",
+            "survey_fields": [
+               {
+                  "name": "dowry_during_marriage",
+                  "type": "toggle_input",
+                  "active": "true", 
+                  "label": "বিয়ের সময় কিছু দেওয়া হয়েছিল কিনা (was there any dowry during your wedding)?"
+               },
+               {
+                  "name": "loans_to_give_dowry",
+                  "type": "toggle_input",
+                  "active": "true", 
+                  "label": "সেটা দিতে গিয়ে বাড়ীর লোকদের দেনা বা কিছু বিক্রি করতে হয়েছে কিনা (borrowed money to buy those things)?"
+               },
+               {
+                  "name": "dowry_for_daughter_marriage",
+                  "type": "toggle_input",
+                  "active": "true", 
+                  "label": "মেয়ের বিয়ে হলে কিছু দেওয়া হয়েছিল কিনা (did you give dowry for your daughters wedding)?"
+               }
+            ]
+         },
+         {
+            "index": 5,
+            "name": "misc",
+            "label": "Other questions",
+            "survey_fields": [
+               {
+                  "name": "abusive_language",
+                  "type": "toggle_input",
+                  "active": "true", 
+                  "label": "শ্বশুর বাড়ির লোক রেগে গেলে বাপের বাড়ি / মা বাবা কে নিয়ে গালাগালি দিয়েছে কখনো (anyone in your husband's family used abusive language towards your parents)?"
+               },
+               {
+                  "name": "marriage_type",
+                  "type": "dropdown",
+                  "active": "true", 
+                  "label": "বিয়ে কিভাবে হয়েছে (how did you get married?)",
+                  "options": [
+                     "বাড়ি থেকে দেখাশোনা করে(arranged marriage)",
+                     "বাড়ির অমতে (disagree of the parents)",
+                     "শুধুমাত্র পরিবারের ইচ্ছায় (at the will of the parents)"
+                  ]
+               },
+               {
+                  "name": "domestic_violence",
+                  "type": "toggle_input",
+                  "active": "true", 
+                  "label": "জীবনে কখন কেউ চড় মেরেছে বা চুলের মুটি ধরে মেরেছে (has anyone ever beaten you)?"
+               },
+               {
+                  "name": "support_system",
+                  "type": "dropdown",
+                  "active": "true", 
+                  "label": "বিপদে পড়লে সাহায্যের জন্যে কার কাছে যাও বা যাবে (help during any crisis)",
+                  "options": [
+                     "ব্যক্তি (from a particular person)",
+                     "পুলিশ (police)",
+                     "বাপের বাড়ি (parents)",
+                     "সংস্থা (organisation)",
+                     "FIXME (neighbor)",
+                     "FIXME (friends)"
+                  ]
+               },
+               {
+                  "name": "girl_child_count",
+                  "type": "dropdown",
+                  "active": "true", 
+                  "label": "আপনার কয়টি কন্যা সন্তান আছে? (how many daughters)?",
+                  "options": [
+                     "নেই  (none)",
+                     "১টি (1)",
+                     "২টি (2)",
+                     "৩টি (3)",
+                     "৩ এর অধিক (rore than 3)"
+                  ]
+               },
+               {
+                  "name": "oldest_daughter_age",
+                  "type": "dropdown",
+                  "active": "true", 
+                  "label": "মেয়ের সর্বোচ্চ বয়স কতো (oldest daughter age)?",
+                  "options": [
+                     "৫ এর কম (less than 5)",
+                     "৫-৮ বছর(5-8yrs)",
+                     "৯-১১ বছর (9-11yrs)",
+                     "১২-১৫ বছর (12-15yrs)",
+                     "১৫ এর অধিক (more than 15)"
+                  ]
+               },
+               {
+                  "name": "home_safe_for_daughter",
+                  "type": "toggle_input",
+                  "active": "true", 
+                  "label": "আপনার কন্যা সন্তানের জন্য কি আপনার এলাকা বা বাড়ি সুরক্ষিত বলে মনে হয় (home safe for daughters)?"
+               },
+               {
+                  "name": "cause_for_unsafety",
+                  "type": "dropdown",
+                  "active": "true", 
+                  "label": "যদি নয় তবে কেন? (if not then why)?",
+                  "options": [
+                     "বাড়িতে বেশি শাসন করা হয় (controlled by adult members in family)",
+                     "বন্ধুত্বের গণ্ডিটা অসুরক্ষিত (unsafe friend circle)",
+                     "বাড়ির সদস্যদের সাথে প্রায় রাগারাগি/ঝগড়া হয় (unhealthy relationship with the paren)ts",
+                     "অন্যান্য (other)"
+                  ]
+               }
+            ]
+         }
     ]
 }
