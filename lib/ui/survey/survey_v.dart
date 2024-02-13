@@ -15,8 +15,8 @@ class SurveyView extends StatelessWidget {
     required this.surveyId,
     required this.familyId,
     required this.memberId,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +88,8 @@ class SurveyView extends StatelessWidget {
                         if (model.pageIndex != 0)
                           ElevatedButton(
                             onPressed: model.prevPage,
-                            child: Row(
-                              children: const [
+                            child: const Row(
+                              children: [
                                 Icon(Icons.chevron_left),
                                 Text("Previous"),
                               ],
@@ -98,8 +98,8 @@ class SurveyView extends StatelessWidget {
                         if (model.pageIndex != model.sectionCount)
                           ElevatedButton(
                             onPressed: model.nextPage,
-                            child: Row(
-                              children: const [
+                            child: const Row(
+                              children: [
                                 Text("Next"),
                                 Icon(Icons.chevron_right),
                               ],
@@ -108,8 +108,8 @@ class SurveyView extends StatelessWidget {
                         if (model.pageIndex == model.sectionCount)
                           ElevatedButton(
                             onPressed: model.submit,
-                            child: Row(
-                              children: const [
+                            child: const Row(
+                              children: [
                                 Text("Submit"),
                                 Icon(Icons.check),
                               ],
@@ -137,8 +137,8 @@ class SurveySummaryView extends StatelessWidget {
     this.memberId,
     this.survey,
     this.form, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -154,16 +154,16 @@ class SurveySummaryView extends StatelessWidget {
               },
               children: [
                 TableRow(children: [
-                  TableCell(child: Text("Survey")),
+                  const TableCell(child: Text("Survey")),
                   TableCell(child: Text(survey?.name ?? "")),
                 ]),
                 TableRow(children: [
-                  TableCell(child: Text("Family")),
+                  const TableCell(child: Text("Family")),
                   TableCell(child: Text(family?.last_name ?? "")),
                 ]),
                 if (memberId != "0")
                   TableRow(children: [
-                    TableCell(child: Text("Member")),
+                    const TableCell(child: Text("Member")),
                     TableCell(
                         child: Text(family?.members
                                 .where(

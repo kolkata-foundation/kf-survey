@@ -5,7 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'splash_vm.dart';
 
 class SplashView extends StatelessWidget {
-  const SplashView({Key? key}) : super(key: key);
+  const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class SplashView extends StatelessWidget {
                           ),
                           const Text(
                             "Surveys",
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 40,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,

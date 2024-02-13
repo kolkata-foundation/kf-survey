@@ -5,7 +5,7 @@ import 'package:kf_survey/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class AppLoginView extends StatelessWidget {
-  AppLoginView({Key? key}) : super(key: key);
+  AppLoginView({super.key});
   final _navigationService = locator.get<NavigationService>();
 
   @override

@@ -5,7 +5,7 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 class LoadingScreen extends StatelessWidget {
   final double opacity;
-  const LoadingScreen({Key? key, this.opacity = 0.5}) : super(key: key);
+  const LoadingScreen({super.key, this.opacity = 0.5});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ List<String> genders = ["Male", "Female", "Others"];
 
 FormGroup surveyToFormGroup(Survey survey) {
   return fb.group({
-    for (var section in survey!.sections)
+    for (var section in survey.sections)
       section.name: fb.group(
         // TODO: Add filtering based on active
         Map.fromEntries(section.survey_fields

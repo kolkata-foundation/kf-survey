@@ -7,7 +7,7 @@ import 'package:stacked/stacked.dart';
 import 'family_add_vm.dart';
 
 class FamilyAddView extends StatelessWidget {
-  const FamilyAddView({Key? key}) : super(key: key);
+  const FamilyAddView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class FamilyAddView extends StatelessWidget {
                                             child: Text(district.name),
                                           ),
                                         )
-                                        .toList(),
+                                        ,
                                   ],
                                   onChanged: model.onDistrictChange,
                                 ),
@@ -70,7 +70,7 @@ class FamilyAddView extends StatelessWidget {
                                             child: Text(subdivision.name),
                                           ),
                                         )
-                                        .toList(),
+                                        ,
                                   ],
                                   onChanged: model.onSubDivisionChange,
                                 ),
@@ -91,7 +91,7 @@ class FamilyAddView extends StatelessWidget {
                                             child: Text(block),
                                           ),
                                         )
-                                        .toList(),
+                                        ,
                                   ],
                                 ),
                               ),
@@ -173,8 +173,7 @@ class AddMemberCard extends StatelessWidget {
   final FormGroup form;
   final Function() onPressed;
   const AddMemberCard(
-      {required this.form, required this.onPressed, Key? key, required})
-      : super(key: key);
+      {required this.form, required this.onPressed, super.key, required});
 
   @override
   Widget build(BuildContext context) {

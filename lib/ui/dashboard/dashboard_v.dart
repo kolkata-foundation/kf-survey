@@ -8,7 +8,7 @@ import '../../models/family.dart';
 import 'dashboard_vm.dart';
 
 class DashboardView extends StatelessWidget {
-  const DashboardView({Key? key}) : super(key: key);
+  const DashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class DashboardView extends StatelessWidget {
         drawer: Drawer(
           child: Column(
             children: [
-              CircleAvatar(),
+              const CircleAvatar(),
               ListTile(
-                title: Text("Profile"),
+                title: const Text("Profile"),
                 onTap: model.onProfileTap,
               )
             ],

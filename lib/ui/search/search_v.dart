@@ -10,7 +10,7 @@ import 'search_vm.dart';
 
 class SearchView extends StatelessWidget {
   final bool isFamilySearch;
-  const SearchView({Key? key, this.isFamilySearch = true}) : super(key: key);
+  const SearchView({super.key, this.isFamilySearch = true});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class SearchView extends StatelessWidget {
                                   child: Text(district.name),
                                 ),
                               )
-                              .toList(),
+                              ,
                         ],
                         onChanged: model.onDistrictChange,
                       ),
@@ -62,7 +62,7 @@ class SearchView extends StatelessWidget {
                                   child: Text(subdivision.name),
                                 ),
                               )
-                              .toList(),
+                              ,
                         ],
                         onChanged: model.onSubDivisionChange,
                       ),
@@ -83,7 +83,7 @@ class SearchView extends StatelessWidget {
                                   child: Text(block),
                                 ),
                               )
-                              .toList(),
+                              ,
                         ],
                         onChanged: model.onBlockChange,
                       ),

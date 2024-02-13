@@ -32,14 +32,12 @@ class TextFixedSurveyField extends SurveyField {
   final int font_size;
 
   TextFixedSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.display_text,
     this.font_size = 16,
   }) : super(
-          active: active,
           type: "text_fixed",
-          name: name,
         );
 
   factory TextFixedSurveyField.fromJson(Map<String, Object?> json) =>
@@ -63,13 +61,11 @@ class ImageFixedSurveyField extends SurveyField {
   final String source;
 
   ImageFixedSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.source,
   }) : super(
-          active: active,
           type: "image_fixed",
-          name: name,
         );
 
   factory ImageFixedSurveyField.fromJson(Map<String, Object?> json) =>
@@ -88,14 +84,12 @@ class TextInputSurveyField extends SurveyField {
   final int? max_size;
 
   TextInputSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
     this.max_size,
   }) : super(
-          active: active,
           type: "text_input",
-          name: name,
         );
 
   factory TextInputSurveyField.fromJson(Map<String, Object?> json) =>
@@ -119,13 +113,11 @@ class ToggleSurveyField extends SurveyField {
   final String label;
 
   ToggleSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
   }) : super(
-          active: active,
           type: "toggle_input",
-          name: name,
         );
 
   factory ToggleSurveyField.fromJson(Map<String, Object?> json) =>
@@ -146,13 +138,11 @@ class CheckboxSurveyField extends SurveyField {
   final String label;
 
   CheckboxSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
   }) : super(
-          active: active,
           type: "checkbox",
-          name: name,
         );
 
   factory CheckboxSurveyField.fromJson(Map<String, Object?> json) =>
@@ -176,13 +166,11 @@ class RatingSurveyField extends SurveyField {
   final String label;
 
   RatingSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
   }) : super(
-          active: active,
           type: "rating",
-          name: name,
         );
 
   factory RatingSurveyField.fromJson(Map<String, Object?> json) =>
@@ -212,14 +200,12 @@ class DropdownSurveyField extends SurveyField {
   final List<String> options;
 
   DropdownSurveyField({
-    required String name,
-    required bool active,
+    required super.name,
+    required super.active,
     required this.label,
     required this.options,
   }) : super(
-          active: active,
           type: "dropdown",
-          name: name,
         );
 
   factory DropdownSurveyField.fromJson(Map<String, Object?> json) =>

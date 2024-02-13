@@ -8,8 +8,8 @@ class SurveyListView extends StatelessWidget {
   const SurveyListView({
     required this.familyId,
     required this.memberId,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +26,12 @@ class SurveyListView extends StatelessWidget {
                           title: Text(e.value.name),
                           onTap: () => model.surveySelected(e.key),
                           tileColor: Colors.teal.shade100,
-                          trailing: Icon(Icons.arrow_right),
+                          trailing: const Icon(Icons.arrow_right),
                         ),
                       )
                     : Container(),
               )
-              .toList(),
+              ,
         ]),
       ),
       viewModelBuilder: () => SurveyListViewModel(familyId, memberId),

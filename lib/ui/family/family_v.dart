@@ -7,14 +7,14 @@ import 'family_vm.dart';
 
 class FamilyView extends StatelessWidget {
   final String familyId;
-  const FamilyView({required this.familyId, Key? key}) : super(key: key);
+  const FamilyView({required this.familyId, super.key});
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<FamilyViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
-          title: Text("Family"),
+          title: const Text("Family"),
         ),
         body: (model.isBusy)
             ? const LoadingScreen(
