@@ -47,7 +47,7 @@ class SplashView extends StatelessWidget {
                             ),
                           ),
                           const Text(
-                            "Social Impact Measurement & Analysis Tool",
+                            "Social Impact Surveys",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -60,7 +60,7 @@ class SplashView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               const Text(
-                                "Made with ❤️ by ",
+                                "Made with ❤️  by ",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,

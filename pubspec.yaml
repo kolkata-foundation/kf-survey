@@ -39,12 +39,12 @@ dependencies:
   stacked: ^3.1.0+1
   stacked_services: ^1.0.0
   cloud_firestore: ^4.3.1
-  reactive_forms: ^14.1.0
-  uuid: ^3.0.6
+  reactive_forms: ^16.1.1
+  uuid: ^4.3.3
   dropdown_search: ^5.0.5
   firebase_ui_auth: ^1.1.17
   firebase_ui_firestore: ^1.2.10
-  reactive_flutter_rating_bar: ^0.4.0
+  reactive_flutter_rating_bar: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -55,11 +55,19 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   build_runner: ^2.1.11
   stacked_generator: ^1.0.0
   json_serializable: ^6.2.0
   json_annotation: ^4.5.0
+
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/logo.png"
+  remove_alpha_ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
