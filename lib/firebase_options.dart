@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,44 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAoDev75VaFC3V0S1PkwnDuv1Snp57LsEg',
-    appId: '1:667429940688:web:4113c9a22979cb0a3c5dd5',
-    messagingSenderId: '667429940688',
-    projectId: 'kf-survey',
-    authDomain: 'kf-survey.firebaseapp.com',
-    databaseURL: 'https://kf-survey.firebaseio.com',
-    storageBucket: 'kf-survey.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD9F4ygH2pl77Y10HODxIXnJDrzUKRZcwc',
-    appId: '1:667429940688:android:c0a3173554bba77b3c5dd5',
-    messagingSenderId: '667429940688',
-    projectId: 'kf-survey',
-    databaseURL: 'https://kf-survey.firebaseio.com',
-    storageBucket: 'kf-survey.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBAIyDOB1dLrZyjeUEwj5FUQr3LoTx2PZg',
-    appId: '1:667429940688:ios:322eda3849dac5263c5dd5',
-    messagingSenderId: '667429940688',
-    projectId: 'kf-survey',
-    databaseURL: 'https://kf-survey.firebaseio.com',
-    storageBucket: 'kf-survey.appspot.com',
-    iosClientId: '667429940688-5lpnfvjo5cjmef66ffiovtqjj6s0gov9.apps.googleusercontent.com',
-    iosBundleId: 'com.example.kfSurvey',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBAIyDOB1dLrZyjeUEwj5FUQr3LoTx2PZg',
-    appId: '1:667429940688:ios:322eda3849dac5263c5dd5',
-    messagingSenderId: '667429940688',
-    projectId: 'kf-survey',
-    databaseURL: 'https://kf-survey.firebaseio.com',
-    storageBucket: 'kf-survey.appspot.com',
-    iosClientId: '667429940688-5lpnfvjo5cjmef66ffiovtqjj6s0gov9.apps.googleusercontent.com',
-    iosBundleId: 'com.example.kfSurvey',
+    apiKey: 'AIzaSyCSppzhWtrur_W3cHyzpJqB6HajjTpwqME',
+    appId: '1:572666547845:android:d1adeaea184f40e13ba3ec',
+    messagingSenderId: '572666547845',
+    projectId: 'sima-surveys',
+    storageBucket: 'sima-surveys.appspot.com',
   );
 }

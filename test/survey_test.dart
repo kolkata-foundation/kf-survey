@@ -28,7 +28,7 @@ void main() {
       )
     ],
   );
-  print(JsonEncoder.withIndent('\t').convert(survey));
+  print(const JsonEncoder.withIndent('\t').convert(survey));
 
   var form = fb.group({
     for (var section in survey.sections)

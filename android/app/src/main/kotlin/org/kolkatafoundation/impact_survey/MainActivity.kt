@@ -1,4 +1,4 @@
-package com.example.kf_survey
+package org.kolkatafoundation.impact_survey
 
 import io.flutter.embedding.android.FlutterActivity
 

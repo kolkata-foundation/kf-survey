@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kf_survey">
+    package="org.kolkatafoundation.impact_survey">
    <application
         android:label="KF Social Impact Survey"
         android:name="${applicationName}"

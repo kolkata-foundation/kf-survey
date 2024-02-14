@@ -1,60 +1,26 @@
 {
   "project_info": {
-    "project_number": "667429940688",
-    "firebase_url": "https://kf-survey.firebaseio.com",
-    "project_id": "kf-survey",
-    "storage_bucket": "kf-survey.appspot.com"
+    "project_number": "572666547845",
+    "project_id": "sima-surveys",
+    "storage_bucket": "sima-surveys.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:667429940688:android:c0a3173554bba77b3c5dd5",
+        "mobilesdk_app_id": "1:572666547845:android:d1adeaea184f40e13ba3ec",
         "android_client_info": {
-          "package_name": "com.example.kf_survey"
+          "package_name": "org.kolkatafoundation.impact_survey"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "667429940688-6gp773q6pbfocvjivd6obsq0er5qv8og.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.kf_survey",
-            "certificate_hash": "36e28a27e6f84a8baf3531334ed30ccc3555f457"
-          }
-        },
-        {
-          "client_id": "667429940688-equ3ipdvdoaiia13he0aea6qaajm5tfg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.kf_survey",
-            "certificate_hash": "cb8f75b03e76b6101f959b6352e5e7e04f295fbc"
-          }
-        },
-        {
-          "client_id": "667429940688-su6e8kc9mj11d984qgbv6q1nnjcaehrs.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD9F4ygH2pl77Y10HODxIXnJDrzUKRZcwc"
+          "current_key": "AIzaSyCSppzhWtrur_W3cHyzpJqB6HajjTpwqME"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "667429940688-su6e8kc9mj11d984qgbv6q1nnjcaehrs.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "667429940688-5lpnfvjo5cjmef66ffiovtqjj6s0gov9.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.kfSurvey"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
